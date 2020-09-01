@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {Button} from '@material-ui/core'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom"
+import Home from './components/Home.js';
+import ParentSignUp from './components/ParentSignUp.js';
 
 function App() {
-  return (
+  return ( 
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. This is the backpat site home page!
-        </p>
-        <Button color="primary">Test</Button> 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Router>
+          <Switch>
+            <Route path="/parentsignup">
+              <ParentSignUp/>
+            </Route>
+            <Route path="/">
+              <Home/>
+            </Route>
+          </Switch>
+        </Router>
       </header>
     </div>
   );
