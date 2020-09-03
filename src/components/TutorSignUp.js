@@ -12,4 +12,4 @@ function TutorSignUp(){
 }
 
 
-export default TutorSignUp
+export default TutorSignUp;
