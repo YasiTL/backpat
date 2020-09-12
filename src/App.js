@@ -19,6 +19,9 @@ function App() {
             <Route path="/parentsignup">
               <ParentSignUp/>
             </Route>
+            <Route path="/login">
+              <Login/>
+            </Route>
             <Route path="/">
               <Home/>
             </Route>
