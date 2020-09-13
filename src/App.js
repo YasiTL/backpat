@@ -9,6 +9,7 @@ import {
 } from "react-router-dom"
 import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
+import TutorSignUp from './components/TutorSignUp.js';
 
 function App() {
   return ( 
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login/>
+            </Route> 
+            <Route path ="/tutorsignup">
+              <TutorSignUp/>
             </Route>
             <Route path="/">
               <Home/>
