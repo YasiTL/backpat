@@ -13,6 +13,7 @@ class ParentForm extends React.Component {
 
         };
         //this.handleInputChange = this.handleInputChange.bind(this);
+        //onChange={e => this.setState({ firstName: e.target.value})}
     }
 
 
@@ -27,7 +28,7 @@ render() {
                 name="firstName"
                 type="text"
                 value={this.state.firstName}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ firstName: e.target.value})} />
 
             </label>
             <br />
@@ -37,7 +38,7 @@ render() {
                 name="lastName"
                 type="text"
                 value={this.state.lastName}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ lastName: e.target.value})} />
 
 
             </label>
@@ -48,7 +49,7 @@ render() {
                 name="email"
                 type="email"
                 value={this.state.email}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ email: e.target.value})} />
 
             </label>
             <br />
@@ -58,7 +59,7 @@ render() {
                 name="phone"
                 type="number"
                 value={this.state.phone}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ phone: e.target.value})} />
 
             </label>
             <br />
@@ -68,7 +69,7 @@ render() {
                 name="timezone"
                 type="text"
                 value={this.state.timezone}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ timezone: e.target.value})} />
 
             </label>
             <br />
@@ -83,7 +84,11 @@ render() {
         type="radio"
         name="essential"
         value="yes"
+        
+        
         checked={this.state.selectedOption === "yes"}
+        onChange = {this.handleCheck}
+        
         className="form-check-input"
       />
       Yes
@@ -96,7 +101,10 @@ render() {
         type="radio"
         name="essential"
         value="no"
+        
         checked={this.state.selectedOption === "no"}
+        onChange = {this.handleCheck}
+        
         className="form-check-input"
       />
       No
