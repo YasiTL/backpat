@@ -10,6 +10,7 @@ import {
 import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
+import Login from './components/Login.js';
 
 function App() {
   return ( 
