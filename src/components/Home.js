@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Link,
 } from "react-router-dom"
+import { Button } from '@material-ui/core';
 
 function Home() {
     return (
@@ -11,16 +12,20 @@ function Home() {
             <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Button variant="outlined" color="primary" component={Link} to="/">Home</Button>
+                {/* <Link to="/"><Button varient="outlined" color="secondary">Home</Button></Link> */}
               </li>
               <li>
-                <Link to="/parentsignup">Parent Sign Up</Link>
+                <Button variant="outlined" color="primary" component={Link} to="/parentsignup">Parent Sign Up</Button>
+                {/* <Link to="/parentsignup">Parent Sign Up</Link> */}
               </li>
               <li>
-                <Link to="/tutorsignup">Tutor Sign Up</Link>
+                <Button variant="outlined" color="primary" component={Link} to="/tutorsignup">Tutor Sign Up</Button>
+                {/* <Link to="/tutorsignup">Tutor Sign Up</Link> */}
               </li>
               <li>
-                <Link to="/login">Login here</Link>
+                <Button variant="outlined" color="primary" component={Link} to="/login">Login</Button>
+                {/* <Link to="/login">Login here</Link> */}
               </li>
 
             </ul>
