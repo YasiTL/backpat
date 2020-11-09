@@ -103,7 +103,6 @@ render() {
     )
 }
     }
-    
-<script src="mainPF.js"></script>
+//<script src="mainPF.js"></script>
 export default ParentForm
 
