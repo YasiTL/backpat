@@ -1,6 +1,6 @@
 import   React, { Component } from 'react'
 
-class TutorForm extends React.Component {
+class ParentForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -21,7 +21,7 @@ class TutorForm extends React.Component {
 render() {
     return ( 
 
-        <form>
+        <form id = "ParentForm">
             <div>
             <label>
                 First Name:
@@ -96,9 +96,14 @@ render() {
 
             </label>
             </div>
-
+            <p class = "full">
+                <button type="submit">Submit</button>
+            </p>
         </form>
     )
 }
     }
-export default TutorForm
+    
+<script src="mainPF.js"></script>
+export default ParentForm
+
