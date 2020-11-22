@@ -16,5 +16,5 @@ class Firebase {
     app.initializeApp(config);
   }
 }
-
+ 
 export default Firebase;
