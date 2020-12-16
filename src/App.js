@@ -7,6 +7,11 @@ import {
   Link,
   Redirect
 } from "react-router-dom"
+
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import Grid from '@material-ui/core'
+
 import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
@@ -15,9 +20,22 @@ import ParentDashboard from './components/ParentDashboard';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
 
+// Global Theme Changes
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#EF6C00'
+    }
+  },
+  typography: {
+    fontFamily: 'Lato, sans-serif'
+  }
+})
+
 function App() {
   return (
     <div className="App">
+      <ThemeProvider theme={theme}>
       <header className="App-header">
         <Router>
           <Switch>
@@ -45,6 +63,7 @@ function App() {
           </Switch>
         </Router>
       </header>
+      </ThemeProvider>
     </div>
   );
 }
