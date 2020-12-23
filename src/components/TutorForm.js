@@ -93,7 +93,9 @@ render() {
 
             </label>
             </div>
-
+            <p class = "full">
+                <button type="submit">Submit</button>
+            </p>
         </form>
     )
 }
