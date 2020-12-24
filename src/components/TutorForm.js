@@ -16,11 +16,20 @@ class TutorForm extends React.Component {
         //this.handleInputChange = this.handleInputChange.bind(this);
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const data = this.state
+        console.log(data)
+    }
+
 
 render() {
+    console.log("TutorForm.js")
     return ( 
+        
 
-        <form>
+        <form onSubmit ={this.handleSubmit}
+        id = "TutorForm">
             <div>
             <label>
                 First Name:
@@ -28,7 +37,9 @@ render() {
                 name="firstName"
                 type="text"
                 value={this.state.firstName}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ firstName: e.target.value})}
+                //onChange={this.handleInputChange} 
+                />
 
             </label>
             <br />
@@ -38,7 +49,9 @@ render() {
                 name="lastName"
                 type="text"
                 value={this.state.lastName}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ lastName: e.target.value})}
+                //onChange={this.handleInputChange} 
+                />
 
 
             </label>
@@ -49,7 +62,9 @@ render() {
                 name="email"
                 type="email"
                 value={this.state.email}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ email: e.target.value})}
+                //onChange={this.handleInputChange} 
+                />
 
             </label>
             <br />
@@ -59,7 +74,7 @@ render() {
                 name="phone"
                 type="number"
                 value={this.state.phone}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ phone: e.target.value})} />
 
             </label>
             <br />
@@ -69,7 +84,7 @@ render() {
                 name="university"
                 type="text"
                 value={this.state.university}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ university: e.target.value})} />
 
             </label>
             <br />
@@ -79,7 +94,7 @@ render() {
                 name="timezone"
                 type="text"
                 value={this.state.timezone}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ timezone: e.target.value})} />
 
             </label>
             <br />
@@ -89,7 +104,7 @@ render() {
                 name="bio"
                 type="text"
                 value={this.state.bio}
-                onChange={this.handleInputChange} />
+                onChange={e => this.setState({ bio: e.target.value})} />
 
             </label>
             </div>
@@ -98,6 +113,8 @@ render() {
             </p>
         </form>
     )
+    
+    
 }
     }
 export default TutorForm
