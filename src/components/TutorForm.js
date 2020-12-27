@@ -26,14 +26,10 @@ class TutorForm extends React.Component {
 render() {
     console.log("TutorForm.js")
     return ( 
-<<<<<<< HEAD
-        <form>
-=======
         
 
         <form onSubmit ={this.handleSubmit}
         id = "TutorForm">
->>>>>>> main
             <div>
             <label>
                 First Name:
