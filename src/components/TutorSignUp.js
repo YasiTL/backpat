@@ -1,10 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import TutorForm from './TutorForm';
-import {
-    BrowserRouter as Router,
-    Link,
-  } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function TutorSignUp(){
 
