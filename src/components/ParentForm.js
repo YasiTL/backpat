@@ -8,20 +8,27 @@ class ParentForm extends React.Component {
             lastName: "doe",
             email: "blank@mailcatch.com",
             phone: 1234567890,
-            university: "Illinois Institute of Technology",
             timezone: "CST",
-            bio: "beep boop"
+            essential: "True"
+
 
         };
         //this.handleInputChange = this.handleInputChange.bind(this);
         //onChange={e => this.setState({ firstName: e.target.value})}
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const data = this.state
+        console.log(data)
+    }
 
 render() {
+    console.log("ParentForm.js")
     return ( 
 
-        <form id = "ParentForm">
+        <form onSubmit ={this.handleSubmit}
+        id = "ParentForm">
             <div>
             <label>
                 First Name:
@@ -66,15 +73,7 @@ render() {
 
             </label>
             <br />
-            <label>
-                University:
-                <input
-                name="university"
-                type="text"
-                value={this.state.university}
-                onChange={e => this.setState({ university: e.target.value})} />
 
-            </label>
             <br />
             <label>
                 Timezone:
@@ -86,15 +85,7 @@ render() {
 
             </label>
             <br />
-            <label>
-                Short Bio:
-                <input
-                name="bio"
-                type="text"
-                value={this.state.bio}
-                onChange={e => this.setState({ bio: e.target.value})} />
 
-            </label>
             </div>
             <p class = "full">
                 <button type="submit">Submit</button>
