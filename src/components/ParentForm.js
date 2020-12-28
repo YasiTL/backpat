@@ -1,13 +1,16 @@
-import   React, { Component } from 'react'
+import { TextField, Button } from '@material-ui/core';
+import React from 'react';
+import InputMask from 'react-input-mask';
 
 class ParentForm extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+        this.inputRef = React.createRef();
         this.state = {
             firstName: "john",
             lastName: "doe",
             email: "blank@mailcatch.com",
-            phone: 1234567890,
+            phone: "1234567890",
             timezone: "CST",
             essential: "True"
 
@@ -23,77 +26,66 @@ class ParentForm extends React.Component {
         console.log(data)
     }
 
-render() {
-    console.log("ParentForm.js")
-    return ( 
+    render() {
+        console.log("ParentForm.js")
+        return (
+            <form onSubmit={this.handleSubmit} id="ParentForm" autoComplete="off">
+                <div>                        
+                    <TextField
+                        required
+                        name="firstName"
+                        type="text"
+                        value={this.state.firstName}
+                        label="First Name"
+                        onChange={e => this.setState({ firstName: e.target.value })}
+                    />
+                    <br />
+                    <TextField
+                        required
+                        name="lastName"
+                        type="text"
+                        value={this.state.lastName}
+                        label="Last Name"
+                        onChange={e => this.setState({ lastName: e.target.value })}
+                    />
+                    <br />
+                    <TextField
+                        required
+                        name="email"
+                        type="text"
+                        value={this.state.email}
+                        label="Email"
+                        onChange={e => this.setState({ email: e.target.value })}
+                    />
+                    <br />
+                    <InputMask
+                        mask="(999)-999-9999"
+                        value={this.state.phone}
+                        onChange={e => this.setState({ phone: e.target.value })}
+                        >
+                        <TextField
+                            ref={this.inputRef}
+                            type="text"/>
+                    </InputMask>
+                    <br />
+                    <TextField
+                        required
+                        name="timezone"
+                        type="text"
+                        value={this.state.timezone}
+                        label="Timezone"
+                        onChange={e => this.setState({ timezone: e.target.value })}
+                    />
+                    <br />
+                </div>
 
-        <form onSubmit ={this.handleSubmit}
-        id = "ParentForm">
-            <div>
-            <label>
-                First Name:
-                <input
-                name="firstName"
-                type="text"
-                value={this.state.firstName}
-                //onChange={this.handleInputChange} 
-                onChange={e => this.setState({ firstName: e.target.value})}
-                />
+                <p className="full">
+                    <Button variant="contained" color="primary" type="submit">Submit</Button>
+                </p>
 
-            </label>
-            <br />
-            <label>
-                Last Name:
-                <input
-                name="lastName"
-                type="text"
-                value={this.state.lastName}
-                onChange={e => this.setState({ lastName: e.target.value})} />
-
-
-            </label>
-            <br />
-            <label>
-                Email:
-                <input
-                name="email"
-                type="email"
-                value={this.state.email}
-                onChange={e => this.setState({ email: e.target.value})} />
-
-            </label>
-            <br />
-            <label>
-                Phone:
-                <input
-                name="phone"
-                type="number"
-                value={this.state.phone}
-                onChange={e => this.setState({ phone: e.target.value})} />
-
-            </label>
-            <br />
-
-            <br />
-            <label>
-                Timezone:
-                <input
-                name="timezone"
-                type="text"
-                value={this.state.timezone}
-                onChange={e => this.setState({ timezone: e.target.value})} />
-
-            </label>
-            <br />
-
-            </div>
-            <p class = "full">
-                <button type="submit">Submit</button>
-            </p>
-        </form>
-    )
-}
+            </form>
+        )
     }
-//<script src="mainPF.js"></script>
+}
 export default ParentForm
 
