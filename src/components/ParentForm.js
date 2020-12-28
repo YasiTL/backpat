@@ -64,6 +64,9 @@ class ParentForm extends React.Component {
                         onChange={e => this.setState({ phone: e.target.value })}
                         >
                         <TextField
+                            required
+                            name="phone"
+                            label="Phone"
                             ref={this.inputRef}
                             type="text"/>
                     </InputMask>
