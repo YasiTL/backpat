@@ -1,5 +1,5 @@
-import { TextField, Button } from '@material-ui/core';
 import React from 'react';
+import { TextField, Button } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 
 class ParentForm extends React.Component {
