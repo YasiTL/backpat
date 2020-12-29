@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Box } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 
 class ParentForm extends React.Component {
@@ -33,6 +33,7 @@ class ParentForm extends React.Component {
                 <div>                        
                     <TextField
                         required
+                        fullWidth
                         name="firstName"
                         type="text"
                         value={this.state.firstName}
@@ -42,6 +43,7 @@ class ParentForm extends React.Component {
                     <br />
                     <TextField
                         required
+                        fullWidth
                         name="lastName"
                         type="text"
                         value={this.state.lastName}
@@ -51,6 +53,7 @@ class ParentForm extends React.Component {
                     <br />
                     <TextField
                         required
+                        fullWidth
                         name="email"
                         type="text"
                         value={this.state.email}
@@ -65,6 +68,7 @@ class ParentForm extends React.Component {
                         >
                         <TextField
                             required
+                            fullWidth
                             name="phone"
                             label="Phone"
                             ref={this.inputRef}
@@ -73,6 +77,7 @@ class ParentForm extends React.Component {
                     <br />
                     <TextField
                         required
+                        fullWidth
                         name="timezone"
                         type="text"
                         value={this.state.timezone}
@@ -82,9 +87,9 @@ class ParentForm extends React.Component {
                     <br />
                 </div>
 
-                <p className="full">
-                    <Button variant="contained" color="primary" type="submit">Submit</Button>
-                </p>
+                <Box display="flex" mt={5} justifyContent="center">
+                    <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
+                </Box>
 
             </form>
         )
