@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Box } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 
 class TutorForm extends React.Component {
@@ -31,6 +31,7 @@ render() {
             <div>
                 <TextField
                     required
+                    fullWidth
                     name="firstName"
                     type="text"
                     value={this.state.firstName}
@@ -40,6 +41,7 @@ render() {
                 <br />
                 <TextField
                     required
+                    fullWidth
                     name="lastName"
                     type="text"
                     value={this.state.lastName}
@@ -49,6 +51,7 @@ render() {
                 <br />
                 <TextField
                         required
+                        fullWidth
                         name="email"
                         type="text"
                         value={this.state.email}
@@ -63,6 +66,7 @@ render() {
                     >
                     <TextField
                         required
+                        fullWidth
                         name="phone"
                         label="Phone"
                         ref={this.inputRef}
@@ -71,6 +75,7 @@ render() {
                 <br />
                 <TextField
                     required
+                    fullWidth
                     name="university"
                     type="text"
                     value={this.state.university}
@@ -80,6 +85,7 @@ render() {
                 <br />
                 <TextField
                     required
+                    fullWidth
                     name="timezone"
                     type="text"
                     value={this.state.timezone}
@@ -89,6 +95,7 @@ render() {
                 <br />
                 <TextField
                     required
+                    fullWidth
                     multiline
                     rows={4}
                     name="bio"
@@ -98,9 +105,9 @@ render() {
                     onChange={e => this.setState({ bio: e.target.value })}
                 />
             </div>
-            <p className="full">
-                <Button variant="contained" color="primary" type="submit">Submit</Button>
-            </p>
+            <Box display="flex" mt={5} justifyContent="center">
+                <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
+            </Box>
         </form>
     )
     
