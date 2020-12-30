@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button, Box } from '@material-ui/core';
+import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 
 class ParentForm extends React.Component {
@@ -75,15 +75,20 @@ class ParentForm extends React.Component {
                             type="text"/>
                     </InputMask>
                     <br />
-                    <TextField
+                    <InputLabel id="timezone-label">Timezone</InputLabel>
+                    <Select
                         required
                         fullWidth
-                        name="timezone"
-                        type="text"
+                        labelId="timezone-label"
                         value={this.state.timezone}
-                        label="Timezone"
-                        onChange={e => this.setState({ timezone: e.target.value })}
-                    />
+                        onChange={e => this.setState({ timezone: e.target.value })}>
+                        <MenuItem value="PST">Pacific Standard Time</MenuItem>
+                        <MenuItem value="MST">Mountain Standard Time</MenuItem>
+                        <MenuItem value="CST">Central Standard Time</MenuItem>
+                        <MenuItem value="EST">Eastern Standard Time</MenuItem>
+                        <MenuItem value="AST">Alaska Standard Time</MenuItem>
+                        <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
+                    </Select>
                     <br />
                 </div>
 
