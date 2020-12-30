@@ -12,6 +12,7 @@
     "firebase-tools": "^9.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-input-mask": "^3.0.0-alpha.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
