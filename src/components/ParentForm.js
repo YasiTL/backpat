@@ -8,9 +8,9 @@ class ParentForm extends React.Component {
         super(props);
         this.inputRef = React.createRef();
         this.state = {
-            firstName: "john",
-            lastName: "doe",
-            email: "blank@mailcatch.com",
+            firstName: "John",
+            lastName: "Doe",
+            email: "blank@gmail.com",
             phone: "1234567890",
             timezone: "CST",
             essential: "True"
