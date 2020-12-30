@@ -1,9 +1,6 @@
 import React from 'react';
 import ParentForm from './ParentForm';
-import {
-    BrowserRouter as Router,
-    Link,
-  } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function ParentSignUp() {
     return (
