@@ -4,7 +4,6 @@ import teachingimage from './undraw_learning_-1.png'
 import professorimage from './undraw_professor_-1.png'
 import videocallimage from './undraw_video_call_kxyp-1.png'
 import {
-  BrowserRouter as Router,
   Link,
 } from "react-router-dom"
 import { Box, Button, Grid, Typography } from '@material-ui/core';

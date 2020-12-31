@@ -4,13 +4,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect
 } from "react-router-dom"
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import Grid from '@material-ui/core'
 
 import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
