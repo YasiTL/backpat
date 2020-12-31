@@ -19,17 +19,23 @@ import Login from './components/Login.js';
 import ParentDashboard from './components/ParentDashboard';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
+import { FormatAlignRight } from '@material-ui/icons';
 
 // Global Theme Changes
 const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#EF6C00'
-    }
+    },
+    secondary: {
+      main: '#333333'
+    },
   },
   typography: {
-    fontFamily: 'Lato, sans-serif'
+    fontFamily: 'Open sans',
+    fontSize: 18,
   }
+    
 })
 
 function App() {
