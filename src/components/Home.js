@@ -1,5 +1,5 @@
 import React from 'react';
-import backpatlogo from './backpatlogo.jpg'
+import backpatlogo from './BackPatLogo.png'
 import teachingimage from './undraw_learning_-1.png'
 import professorimage from './undraw_professor_-1.png'
 import videocallimage from './undraw_video_call_kxyp-1.png'
@@ -18,16 +18,16 @@ function Home() {
             <nav>
                <center>
                  <Grid container xs = {12} spacing = {4} padding = {2} direction = 'row' justify = 'space-evenly' alignItems = 'center'>
-                    <Grid item xs = {3} zeroMinWidth>
-                      <Button variant="text" color="secondary" font size = "large" component={Link} to="/"><Typography><b>Back</b>Pat Tutoring</Typography></Button>
+                    <Grid item xs = {3}>
+                      <Button variant="text" color="secondary" size = "large" component={Link} to="/"><Typography><b>Back</b>Pat Tutoring</Typography></Button>
                     </Grid> 
-                    <Grid item xs = {2} zeroMinWidth>
+                    <Grid item xs = {2}>
                       <Button variant="text" color="secondary" size = "large" component={Link} to="/parentsignup"><Typography>Parent Sign Up</Typography></Button>
                     </Grid> 
-                    <Grid item xs = {2} zeroMinWidth>
+                    <Grid item xs = {2}>
                       <Button variant="text" color="secondary" size = "large" component={Link} to="/tutorsignup"><Typography>Tutor Sign Up</Typography></Button> 
                     </Grid>  
-                    <Grid item xs = {2} zeroMinWidth>
+                    <Grid item xs = {2}>
                       <Button variant="text" color="secondary" size = "large" component={Link} to="/login"><Typography>Login</Typography></Button>
                     </Grid>
                   </Grid>
@@ -54,7 +54,7 @@ function Home() {
                 <img src = {teachingimage} alt = '' width = {250} height = {200} />
               </Grid>
               <Grid item xs = {3}>
-                <Box mt = {2} textAlign = 'right'>
+                <Box mt = {3} textAlign = 'right'>
                   <Typography><b>Free enrichment for K-12</b></Typography>
                   <br></br>
                   <Typography>100% free, no-charge virtual tutoring for K-12 students</Typography>
