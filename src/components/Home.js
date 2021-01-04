@@ -1,8 +1,8 @@
 import React from 'react';
-import backpatlogo from './BackPatLogo.png'
-import teachingimage from './undraw_learning_-1.png'
-import professorimage from './undraw_professor_-1.png'
-import videocallimage from './undraw_video_call_kxyp-1.png'
+import backpatlogo from "../assets/BackPatLogo.png"
+import teachingimage from '../assets/learningImage.png'
+import professorimage from '../assets/professor.png'
+import videocallimage from '../assets/videoCall.png'
 import {
   Link,
 } from "react-router-dom"
@@ -11,11 +11,11 @@ import { FormatBold } from '@material-ui/icons';
 
 
 
-//function to create grid rows in body of landing page
+//TODO: Add spacing between body and nav bar; add background to nav bar to make it more distinguishable; Possibly include social media links;
 function Home() {
     return (
         <div>
-            <nav>
+            <nav> {/* Nav Bar*/}
                <center>
                  <Grid container xs = {12} spacing = {4} padding = {2} direction = 'row' justify = 'space-evenly' alignItems = 'center'>
                     <Grid item xs = {3}>
@@ -33,7 +33,7 @@ function Home() {
                   </Grid>
                </center>
           </nav>
-          <body>
+          <body>  {/*Main Page*/}
            <Grid container spacing = {10} align = 'center' justify = 'center' alignItems = 'center'>
               <Grid item xs = {3}>
                 <img src = {backpatlogo} alt ='Logo' width = {350} height = {350} />
