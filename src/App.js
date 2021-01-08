@@ -16,7 +16,6 @@ import Login from './components/Login.js';
 import ParentDashboard from './components/ParentDashboard';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
-import { FormatAlignRight } from '@material-ui/icons';
 
 // Global Theme Changes
 const theme = createMuiTheme({
@@ -38,7 +37,6 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-      <header className="App-header">
         <Router>
           <Switch>
             <Route path="/parentsignup">
@@ -64,7 +62,6 @@ function App() {
             </Route>
           </Switch>
         </Router>
-      </header>
       </ThemeProvider>
     </div>
   );
