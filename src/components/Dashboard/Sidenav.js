@@ -1,6 +1,7 @@
 import React from 'react'
-import { Hidden, Drawer } from '@material-ui/core';
+import { Hidden, Drawer, Avatar, Grid, Box, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -12,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: drawerWidth,
         flexGrow: 1,
       },
+      profile: {
+          height: theme.spacing(15),
+          width: theme.spacing(15),
+      }
 }));
 
 function Sidenav(props) {
@@ -21,7 +26,56 @@ function Sidenav(props) {
     // This is whats inside of the tutor sidenav
     const tutorSidenav = (
         <div>
-            Tutor Sidenav Contents
+            <Box mt = {5}>
+            <Grid container wrap = 'nowrap' direction = 'column' justify = 'center' alignItems = 'center'>
+                <Box alignContent = 'center'>
+                <Grid item md = {2}>
+                    <Avatar sizes = 'large' alt = 'Christian Razo' className = {classes.profile}>CR</Avatar>
+                </Grid>
+                </Box>
+                <Grid item md >
+                    <Box mt = {2} alignContent = 'center'>
+                        Christian Razo {/* //TODO come up with logic to display correct username*/}
+                    </Box>
+                </Grid>
+                <Grid item xs = {12}>
+                    <Box md = {2} alignContent = 'center'>
+                        <Button variant = 'text' size = 'medium' color = 'primary' fullWidth = {true} component={Link} to="/Profile">View Profile</Button>
+                    </Box>
+                </Grid>
+            </Grid>
+            </Box>
+
+            <Box mt = {10}>
+                <Grid container direction = 'column' justify ='flex start'>
+                    <Box alignContent = 'center' mt ={1}>
+                        <Grid item>
+                            <Button variant = 'text' size = 'large' color = 'primary' fullWidth = {true} component={Link} to="/Dashboard">Dashboard</Button>
+                        </Grid>
+                    </Box>
+                    <Box alignContent = 'center' mt ={1}>
+                        <Grid item>
+                            <Button variant = 'text' size = 'large' color = 'primary' fullWidth = {true} component={Link} to="/Dashboard">Session Log</Button>
+                        </Grid>
+                    </Box>
+                    <Box alignContent = 'center' mt ={1}>
+                        <Grid item>
+                            <Button variant = 'text' size = 'large' color = 'primary' fullWidth = {true} component={Link} to="/Dashboard">Resources</Button>
+                        </Grid>
+                    </Box>
+                    <Box alignContent = 'center' mt ={1}>
+                        <Grid item>
+                            <Button variant = 'text' size = 'large' color = 'primary' fullWidth = {true} component={Link} to="/Dashboard">Tutor Specifics</Button>
+                        </Grid>
+                    </Box>
+                    <Box alignContent = 'center' mt ={1}>
+                        <Grid item>
+                            <Button variant = 'text' size = 'large' color = 'primary' fullWidth = {true} component={Link} to="/Dashboard">Notes and Tools</Button>
+                        </Grid>
+                    </Box>
+                </Grid>
+            </Box>
+            
         </div>
 
     )
@@ -29,7 +83,7 @@ function Sidenav(props) {
     // This is whats inside of the parent side nav
     const parentSidenav = (
         <div>
-            Parent Sidenav Contents
+            
         </div>
     )
 
@@ -38,7 +92,7 @@ function Sidenav(props) {
     return (
         <div>
             <nav>
-                <Hidden smUp implementation="js">
+                <Hidden smUp implementation="js"> {/*Mobile view drawer*/}
                     <Drawer
                         variant="temporary"
                         anchor="left"
@@ -51,7 +105,7 @@ function Sidenav(props) {
                         {tutorSidenav}
                     </Drawer>
                 </Hidden>
-                <Hidden xsDown implementation="js">
+                <Hidden xsDown implementation="js"> {/*desktop view drawer*/}
                     <Drawer
                         classes={{ paper: classes.drawer }}
                         variant="permanent"
