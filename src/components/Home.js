@@ -41,7 +41,7 @@ function Home() {
                </center>
           </nav>
           <body>  {/*Main Page*/}
-          <DashboardAlert alertOpen={alertOpen} toggleAlert={toggleAlert} type="warning" title="To complete your account and begin tutoring, please finish the following:" descriptionItems={["Send us your most recent transcript", "Finish your tutor bio", "Fill in info under 'Tutor Specifics'"]}></DashboardAlert>
+          <DashboardAlert alertOpen={alertOpen} toggleAlert={toggleAlert} type="warning" title="To complete your account and begin tutoring, please finish the following:" descriptionItems={["Send us your most recent transcript", "Finish your tutor bio", 'Fill in info under "Tutor Specifics"']}></DashboardAlert>
            <Grid container spacing = {10} align = 'center' justify = 'center' alignItems = 'center'>
               <Grid item xs = {3}>
                 <img src = {backpatlogo} alt ='Logo' width = {350} height = {350} />
