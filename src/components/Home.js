@@ -14,12 +14,6 @@ import DashboardAlert from './Alert/DashboardAlert';
 
 //TODO: Add spacing between body and nav bar; add background to nav bar to make it more distinguishable; Possibly include social media links;
 function Home() {
-  const [alertOpen, setAlertOpen] = React.useState(true);
-
-  const toggleAlert = () => {
-    setAlertOpen(!alertOpen);
-  };
-
     return (
       <div>
       <nav> {/* Nav Bar*/}
@@ -41,7 +35,6 @@ function Home() {
          </center>
     </nav>
     <body>  {/*Main Page*/}
-    <DashboardAlert alertOpen={alertOpen} toggleAlert={toggleAlert} type="warning" title="To complete your account and begin tutoring, please finish the following:" descriptionItems={["Send us your most recent transcript", "Finish your tutor bio", "Fill in info under 'Tutor Specifics'"]}></DashboardAlert>
      <Grid container spacing = {10} align = 'center' justify = 'center' alignItems = 'center'>
         <Grid item xs = {3}>
           <img src = {backpatlogo} alt ='Logo' width = {350} height = {350} />
