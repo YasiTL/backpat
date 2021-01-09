@@ -2,6 +2,28 @@ import React from 'react'
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 
+import "firebase/auth"
+import { Firebase } from './Firebase/firebase.js';
+const firestore = Firebase.fire.firestore()
+
+// const fb = require('firebase')
+// require('firebase/firestore')
+// firebase.initializeApp(
+//     { apiKey: "AIzaSyCzxBjP_AJsFP3D_QRR6lClDPhJGQvcQ08",
+// authDomain: "backpat-93a28.firebaseapp.com",
+// databaseURL: "https://backpat-93a28.firebaseio.com",
+// projectId: "backpat-93a28",
+// storageBucket: "backpat-93a28.appspot.com",
+// messagingSenderId: "1083110648310",
+// appId: "1:1083110648310:web:d387ae855b693f91277fd7",
+// measurementId: "G-V7N7PHR1GC"})
+
+
+// if (!firebase.apps.length) {
+//     firebase.initializeApp({});
+//  }else {
+//     firebase.app(); // if already initialized, use that one
+//  }
 
 class TutorForm extends React.Component {
     constructor(props){
@@ -22,6 +44,10 @@ class TutorForm extends React.Component {
         event.preventDefault()
         const data = this.state
         console.log(data)
+
+        const TutorRef = firestore.collection("tutors").doc(data.firstName).set(data)
+        console.log("success")
+        //sendToFirebase(data)
     }
 
     render() {
