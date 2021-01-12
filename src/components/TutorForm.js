@@ -1,6 +1,7 @@
 import React from 'react'
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
+import { db } from "../services/firebase"
 
 
 class TutorForm extends React.Component {
@@ -18,10 +19,15 @@ class TutorForm extends React.Component {
         //this.handleInputChange = this.handleInputChange.bind(this);
     }
 
+    async pushNewTutorForm(newTutor) {
+        var docRef = db.collection("tutors");
+        docRef.doc(newTutor.firstName).set(newTutor);
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
-        console.log(data)
+        this.pushNewTutorForm(data);
     }
 
     render() {
