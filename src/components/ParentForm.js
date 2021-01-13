@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
-
+import { db } from "../services/firebase"
 
 class ParentForm extends React.Component {
     constructor(props) {
@@ -20,11 +20,18 @@ class ParentForm extends React.Component {
         //this.handleInputChange = this.handleInputChange.bind(this);
         //onChange={e => this.setState({ firstName: e.target.value})}
     }
+    async pushNewTutorForm(newParent) {
+     // const res = await db.collection("parents").doc(newParent.firstName).set(newParent)
+        const res = db.collection("parents").doc(newParent.firstName).set(newParent)
+        console.log("Send to firebase successful")
+    }
 
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
         console.log(data)
+        this.pushNewTutorForm(data);
+
     }
 
     render() {
@@ -38,7 +45,7 @@ class ParentForm extends React.Component {
                         name="firstName"
                         type="text"
                         value={this.state.firstName}
-                        label="First Name"
+                        label="Parent's First Name"
                         onChange={e => this.setState({ firstName: e.target.value })}
                     />
                     <br />

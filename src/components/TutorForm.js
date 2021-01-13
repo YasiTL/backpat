@@ -20,20 +20,23 @@ class TutorForm extends React.Component {
     }
 
     async pushNewTutorForm(newTutor) {
-        var docRef = db.collection("tutors");
+        var docRef = await db.collection("tutors");
         docRef.doc(newTutor.firstName).set(newTutor);
+        console.log("Send to firebase successful")
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
+        console.log(data)
         this.pushNewTutorForm(data);
+
     }
 
     render() {
         console.log("TutorForm.js")
         return (
-            <form onSubmit={this.handleSubmit} id="ParentForm" autoComplete="off">
+            <form onSubmit={this.handleSubmit} id="TutorForm" autoComplete="off">
                 <div>
                     <TextField
                         required
