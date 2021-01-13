@@ -21,8 +21,8 @@ class ParentForm extends React.Component {
         //onChange={e => this.setState({ firstName: e.target.value})}
     }
     async pushNewParentForm(newParent) {
-     // const res = await db.collection("parents").doc(newParent.firstName).set(newParent)
-        const res = db.collection("parents").doc(newParent.firstName).set(newParent)
+     // const res = await db.collection("parents").doc(newParent.email).set(newParent)
+        const res = db.collection("parents").doc(newParent.email).set(newParent)
         console.log("Send to firebase successful")
     }
 
