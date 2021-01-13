@@ -20,7 +20,7 @@ class ParentForm extends React.Component {
         //this.handleInputChange = this.handleInputChange.bind(this);
         //onChange={e => this.setState({ firstName: e.target.value})}
     }
-    async pushNewTutorForm(newParent) {
+    async pushNewParentForm(newParent) {
      // const res = await db.collection("parents").doc(newParent.firstName).set(newParent)
         const res = db.collection("parents").doc(newParent.firstName).set(newParent)
         console.log("Send to firebase successful")
@@ -30,7 +30,7 @@ class ParentForm extends React.Component {
         event.preventDefault()
         const data = this.state
         console.log(data)
-        this.pushNewTutorForm(data);
+        this.pushNewParentForm(data);
 
     }
 
