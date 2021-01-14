@@ -21,12 +21,12 @@ class TutorForm extends React.Component {
 
     async pushNewTutorForm(newTutor) {
         var docRef = db.collection("tutors");
-        docRef.doc(newTutor.firstName).set(newTutor);
+        docRef.doc(newTutor.email).set(newTutor);
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const data = this.state
+        const data = this.state;
         this.pushNewTutorForm(data);
     }
 
