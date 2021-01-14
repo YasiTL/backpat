@@ -1,11 +1,22 @@
 import React from 'react'
 import Sidenav from './Sidenav'
+import DashboardAlert from '../Alert/DashboardAlert';
+import { Typography } from '@material-ui/core';
+
+const divStyle = {
+  margin: "50px"
+};
+
+
 function Dashboard() {
   return (
       <div>
           <Sidenav mainContent={
               <div>
-                  Main Content! 
+                <div style={divStyle}>
+                        <Typography variant="h2">Your Dashboard</Typography>
+                        <DashboardAlert type="warning" title="To complete your account and begin tutoring, please finish the following:" descriptionItems={["Send us your most recent transcript", "Finish your tutor bio", "Fill in info under 'Tutor Specifics'"]}></DashboardAlert>
+                </div>
               </div>
           } >
           </Sidenav>

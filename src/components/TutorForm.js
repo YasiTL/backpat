@@ -1,15 +1,16 @@
 import React from 'react'
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
+import { db } from "../services/firebase"
 
 
 class TutorForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            firstName: "john",
-            lastName: "doe",
-            email: "blank@mailcatch.com",
+            firstName: "John",
+            lastName: "Doe",
+            email: "blank@gmail.com",
             phone: "1234567890",
             university: "Illinois Institute of Technology",
             timezone: "CST",
@@ -18,10 +19,15 @@ class TutorForm extends React.Component {
         //this.handleInputChange = this.handleInputChange.bind(this);
     }
 
+    async pushNewTutorForm(newTutor) {
+        var docRef = db.collection("tutors");
+        docRef.doc(newTutor.email).set(newTutor);
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
-        const data = this.state
-        console.log(data)
+        const data = this.state;
+        this.pushNewTutorForm(data);
     }
 
     render() {

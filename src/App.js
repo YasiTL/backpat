@@ -22,11 +22,15 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#EF6C00'
-    }
+    },
+    secondary: {
+      main: '#333333'
+    },
   },
   typography: {
-    fontFamily: 'Lato, sans-serif'
+    fontFamily: 'Lato, sans-serif',
   }
+    
 })
 
 function App() {
