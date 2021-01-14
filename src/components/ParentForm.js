@@ -22,7 +22,8 @@ class ParentForm extends React.Component {
     }
     async pushNewParentForm(newParent) {
      // const res = await db.collection("parents").doc(newParent.email).set(newParent)
-        const res = db.collection("parents").doc(newParent.email).set(newParent)
+        var docRef = await db.collection("parents");
+        docRef.doc(newParent.email).set(newParent);
         console.log("Send to firebase successful")
     }
 
