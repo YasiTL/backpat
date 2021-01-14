@@ -22,13 +22,13 @@ class TutorForm extends React.Component {
     async pushNewTutorForm(newTutor) {
         var docRef = await db.collection("tutors");
         docRef.doc(newTutor.email).set(newTutor);
-        console.log("Send to firebase successful")
+        console.log("Send to firebase successful");
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state;
-        console.log(data)
+        console.log(data);
         this.pushNewTutorForm(data);
 
     }
