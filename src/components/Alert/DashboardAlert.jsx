@@ -1,4 +1,3 @@
-import { Snackbar } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab'
 import React from 'react'
 
@@ -20,13 +19,12 @@ import './DashboardAlert.css';
    * EXAMPLE OF HOW TO CALL DASHABORD ALERT
    * 
    */
-  // <DashboardAlert alertOpen={alertOpen} toggleAlert={toggleAlert} type="warning" title="To complete your account and begin tutoring, please finish the following:" descriptionItems={["Send us your most recent transcript", "Finish your tutor bio", "Fill in info under 'Tutor Specifics'"]}></DashboardAlert>
+  // <DashboardAlert type="warning" title="To complete your account and begin tutoring, please finish the following:" descriptionItems={["Send us your most recent transcript", "Finish your tutor bio", "Fill in info under 'Tutor Specifics'"]}></DashboardAlert>
 
 
-export default function DashboardAlert({ vertical = 'top', horizontal = 'center', title, descriptionItems, type, hasIcon = false, alertOpen, toggleAlert }) {
+export default function DashboardAlert({ title, descriptionItems, type, hasIcon = false }) {
     return (
-        <Snackbar anchorOrigin={{ vertical, horizontal }} open={alertOpen} onClose={toggleAlert}>
-            <Alert severity={type} icon={hasIcon} onClose={toggleAlert}>
+            <Alert severity={type} icon={hasIcon}>
                 <AlertTitle className="alert_title">{title}</AlertTitle>
                 <ul>
                 {
@@ -36,6 +34,5 @@ export default function DashboardAlert({ vertical = 'top', horizontal = 'center'
                 }
                 </ul>
             </Alert>
-        </Snackbar>
     )
 }

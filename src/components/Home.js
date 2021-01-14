@@ -6,10 +6,7 @@ import videocallimage from '../assets/videoCall.png'
 import {
   Link,
 } from "react-router-dom"
-import { Box, Button, Grid, Snackbar, Typography } from '@material-ui/core';
-import { FormatBold } from '@material-ui/icons';
-import DashboardAlert from './Alert/DashboardAlert';
-
+import { Box, Button, Grid, Typography } from '@material-ui/core';
 
 
 //TODO: Add spacing between body and nav bar; add background to nav bar to make it more distinguishable; Possibly include social media links;
