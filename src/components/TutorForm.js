@@ -27,7 +27,7 @@ class TutorForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const data = this.state
+        const data = this.state;
         console.log(data)
         this.pushNewTutorForm(data);
 
