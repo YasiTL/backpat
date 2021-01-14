@@ -22,9 +22,7 @@ const useStyles = makeStyles((theme) => ({
 function Sidenav(props) {
     const [isMobileDrawerOpen, setMobileDrawer] = React.useState(false);
     const classes = useStyles();
-
-    // This is whats inside of the tutor sidenav
-    const tutorSidenav = (
+    const profileGrid = (
         <div>
             <Box mt = {5}>
             <Grid container wrap = 'nowrap' direction = 'column' justify = 'center' alignItems = 'center'>
@@ -45,7 +43,13 @@ function Sidenav(props) {
                 </Grid>
             </Grid>
             </Box>
+        </div>
+    )
 
+    // This is whats inside of the tutor sidenav
+    const tutorSidenav = (
+        <div>
+            {profileGrid}
             <Box mt = {10}>
                 <Grid container direction = 'column' justify ='flex start'>
                     <Box alignContent = 'center' mt ={1}>
@@ -83,26 +87,7 @@ function Sidenav(props) {
     // This is whats inside of the parent side nav
     const parentSidenav = (
         <div>
-            <Box mt = {5}>
-            <Grid container wrap = 'nowrap' direction = 'column' justify = 'center' alignItems = 'center'>
-                <Box alignContent = 'center'>
-                <Grid item md = {2}>
-                    <Avatar sizes = 'large' alt = 'Christian Razo' className = {classes.profile}>CR</Avatar>
-                </Grid>
-                </Box>
-                <Grid item md >
-                    <Box mt = {2} alignContent = 'center'>
-                        Christian Razo {/* //TODO come up with logic to display correct username*/}
-                    </Box>
-                </Grid>
-                <Grid item xs = {12}>
-                    <Box md = {2} alignContent = 'center'>
-                        <Button variant = 'text' size = 'medium' color = 'primary' fullWidth = {true} component={Link} to="/Profile">View Profile</Button>
-                    </Box>
-                </Grid>
-            </Grid>
-            </Box>
-
+           {profileGrid}
             <Box mt = {10}>
                 <Grid container direction = 'column' justify ='flex start'>
                     <Box alignContent = 'center' mt ={1}>
