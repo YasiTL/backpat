@@ -38,7 +38,7 @@ class TutorForm extends React.Component {
                         label="First Name"
                         onChange={e => this.setState({ firstName: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth
@@ -48,7 +48,7 @@ class TutorForm extends React.Component {
                         label="Last Name"
                         onChange={e => this.setState({ lastName: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <TextField
                             required
                             fullWidth
@@ -58,7 +58,7 @@ class TutorForm extends React.Component {
                             label="Email"
                             onChange={e => this.setState({ email: e.target.value })}
                         />
-                    <br />
+                    <br /><br /><br />
                     <InputMask
                         mask="(999)-999-9999"
                         value={this.state.phone}
@@ -72,7 +72,7 @@ class TutorForm extends React.Component {
                             ref={this.inputRef}
                             type="text"/>
                     </InputMask>
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth
@@ -82,7 +82,7 @@ class TutorForm extends React.Component {
                         label="Unviersity"
                         onChange={e => this.setState({ university: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <InputLabel id="timezone-label">Timezone</InputLabel>
                     <Select
                         required
@@ -97,7 +97,7 @@ class TutorForm extends React.Component {
                         <MenuItem value="AST">Alaska Standard Time</MenuItem>
                         <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
                     </Select>
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth
