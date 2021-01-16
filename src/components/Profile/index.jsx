@@ -10,7 +10,11 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(8, 4)
     },
     mainContent: {
-        marginTop: theme.spacing(10)
+        marginTop: theme.spacing(5)
+    },
+    sectionContainer: {
+        border: 'solid lightGrey 0.25px',
+        margin: theme.spacing(3)
     }
 }));
 
@@ -23,8 +27,10 @@ export default function Profile() {
                 mainContent={
                     <div>
                         <div><Typography className={classes.title} align='center' variant="h2" component="h3">Profile</Typography></div>
-                        <div className={classes.mainContent}><BasicInfoSection /></div>
-                        <div className={classes.mainContent}><TutoringInfoSection /></div>
+                        <div className={classes.sectionContainer}>
+                            <div className={classes.mainContent}><BasicInfoSection /></div>
+                            <div className={classes.mainContent}><TutoringInfoSection /></div>
+                        </div>
                     </div>
                 }
             ></Sidenav>

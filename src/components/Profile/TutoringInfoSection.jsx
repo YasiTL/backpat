@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(0, 5),
       },
       editButton: {
-          marginLeft: theme.spacing(35)
+          marginLeft: theme.spacing(30)
       }
   }));  
 
