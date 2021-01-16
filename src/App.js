@@ -16,6 +16,7 @@ import Login from './components/Login.js';
 import Dashboard from './components/Dashboard/Dashboard';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
+import Profile from './components/Profile';
 
 // Global Theme Changes
 const theme = createMuiTheme({
@@ -50,6 +51,9 @@ function App() {
             </Route>
             <Route path ="/dashboard">
               <Dashboard/>
+            </Route>
+            <Route path="/profile">
+              <Profile />
             </Route>
             <Route path="/admindashboard">
               <AdminDashboard/>
