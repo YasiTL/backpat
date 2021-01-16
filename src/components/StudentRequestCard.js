@@ -22,6 +22,7 @@ import moment from 'moment';
 
 
 export default function StudentRequestCard(props) {
+    // TODO: Object deconstruction when a more solidified data structure is determined
     const info = props.requestObject;
 
     return (
