@@ -20,20 +20,23 @@ class TutorForm extends React.Component {
     }
 
     async pushNewTutorForm(newTutor) {
-        var docRef = db.collection("tutors");
+        var docRef = await db.collection("tutors");
         docRef.doc(newTutor.email).set(newTutor);
+        console.log("Send to firebase successful");
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state;
+        console.log(data);
         this.pushNewTutorForm(data);
+
     }
 
     render() {
         console.log("TutorForm.js")
         return (
-            <form onSubmit={this.handleSubmit} id="ParentForm" autoComplete="off">
+            <form onSubmit={this.handleSubmit} id="TutorForm" autoComplete="off">
                 <div>
                     <TextField
                         required
@@ -44,7 +47,7 @@ class TutorForm extends React.Component {
                         label="First Name"
                         onChange={e => this.setState({ firstName: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth
@@ -54,7 +57,7 @@ class TutorForm extends React.Component {
                         label="Last Name"
                         onChange={e => this.setState({ lastName: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <TextField
                             required
                             fullWidth
@@ -64,7 +67,7 @@ class TutorForm extends React.Component {
                             label="Email"
                             onChange={e => this.setState({ email: e.target.value })}
                         />
-                    <br />
+                    <br /><br /><br />
                     <InputMask
                         mask="(999)-999-9999"
                         value={this.state.phone}
@@ -78,7 +81,7 @@ class TutorForm extends React.Component {
                             ref={this.inputRef}
                             type="text"/>
                     </InputMask>
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth
@@ -88,7 +91,7 @@ class TutorForm extends React.Component {
                         label="Unviersity"
                         onChange={e => this.setState({ university: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <InputLabel id="timezone-label">Timezone</InputLabel>
                     <Select
                         required
@@ -103,7 +106,7 @@ class TutorForm extends React.Component {
                         <MenuItem value="AST">Alaska Standard Time</MenuItem>
                         <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
                     </Select>
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth

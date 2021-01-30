@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
-
+import { db } from "../services/firebase"
 
 class ParentForm extends React.Component {
     constructor(props) {
@@ -20,11 +20,19 @@ class ParentForm extends React.Component {
         //this.handleInputChange = this.handleInputChange.bind(this);
         //onChange={e => this.setState({ firstName: e.target.value})}
     }
+    async pushNewParentForm(newParent) {
+     // const res = await db.collection("parents").doc(newParent.email).set(newParent)
+        var docRef = await db.collection("parents");
+        docRef.doc(newParent.email).set(newParent);
+        console.log("Send to firebase successful")
+    }
 
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
         console.log(data)
+        this.pushNewParentForm(data);
+
     }
 
     render() {
@@ -38,10 +46,10 @@ class ParentForm extends React.Component {
                         name="firstName"
                         type="text"
                         value={this.state.firstName}
-                        label="First Name"
+                        label="Parent's First Name"
                         onChange={e => this.setState({ firstName: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth
@@ -51,7 +59,7 @@ class ParentForm extends React.Component {
                         label="Last Name"
                         onChange={e => this.setState({ lastName: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <TextField
                         required
                         fullWidth
@@ -61,7 +69,7 @@ class ParentForm extends React.Component {
                         label="Email"
                         onChange={e => this.setState({ email: e.target.value })}
                     />
-                    <br />
+                    <br /><br /><br />
                     <InputMask
                         mask="(999)-999-9999"
                         value={this.state.phone}
@@ -75,7 +83,7 @@ class ParentForm extends React.Component {
                             ref={this.inputRef}
                             type="text"/>
                     </InputMask>
-                    <br />
+                    <br /><br /><br />
                     <InputLabel id="timezone-label">Timezone</InputLabel>
                     <Select
                         required
@@ -90,7 +98,7 @@ class ParentForm extends React.Component {
                         <MenuItem value="AST">Alaska Standard Time</MenuItem>
                         <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
                     </Select>
-                    <br />
+                    <br /><br /><br />
                 </div>
 
                 <Box display="flex" mt={5} justifyContent="center">
