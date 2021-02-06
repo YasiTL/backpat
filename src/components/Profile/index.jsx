@@ -4,6 +4,7 @@ import BasicInfoSection from './BasicInfoSection';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TutoringInfoSection from './TutoringInfoSection';
+import ParentInfoSection from './ParentInfoSection';
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -29,7 +30,7 @@ export default function Profile() {
                         <div><Typography className={classes.title} align='center' variant="h2" component="h3">Profile</Typography></div>
                         <div className={classes.sectionContainer}>
                             <div className={classes.mainContent}><BasicInfoSection /></div>
-                            <div className={classes.mainContent}><TutoringInfoSection /></div>
+                            <div className={classes.mainContent}><ParentInfoSection /></div>
                         </div>
                     </div>
                 }

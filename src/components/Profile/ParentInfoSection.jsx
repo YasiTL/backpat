@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, CssBaseline, Grid, TextField, Typography } from '@material-ui/core';
+import { Button, CssBaseline, Fab, Grid, TextField, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import EditIcon from '@material-ui/icons/Edit';
+import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,10 +16,16 @@ const useStyles = makeStyles((theme) => ({
       },
       editButton: {
           marginRight: theme.spacing(5)
+      },
+      childTitle: {
+          marginTop: theme.spacing(2)
+      },
+      addChildBtn: {
+          marginBottom: theme.spacing(2)
       }
   }));  
 
-function TutoringInfoSection() {
+function ParentInfoSection() {
     const classes = useStyles();
 
     return (
@@ -53,54 +60,27 @@ function TutoringInfoSection() {
                         <TextField 
                             margin="normal"
                             fullWidth
-                            name="phoneNumber"
-                            label="Phone #"
-                            id="phone-number-field"
-                            type="phone"
-                            defaultValue="(314) 432-1313"
-                        />
-                    </Grid>
-                    <Grid item>
-                        <TextField 
-                            margin="normal"
-                            fullWidth
-                            name="grade"
-                            label="Grade"
-                            id="grade-field"
-                            defaultValue="Sophomore"
-                        />
-                    </Grid>
-                    <Grid item>
-                        <TextField 
-                            margin="normal"
-                            fullWidth
-                            name="university"
-                            label="University"
-                            id="university-field"
-                            defaultValue="Illinois Institute of Technology"
-                        />
-                    </Grid>
-                    <Grid item>
-                        <TextField 
-                            margin="normal"
-                            fullWidth
                             name="timezone"
                             label="Timezone"
                             id="timezone-field"
                             defaultValue="Central"
                         />
                     </Grid>
-                    <Grid item>
-                        <TextField 
-                            margin="normal"
-                            fullWidth
-                            multiline
-                            name="bio"
-                            label="Bio"
-                            id="timezbioone-field"
-                            defaultValue="Hello! My name is Jane Doe! I love riding my bike, singing, arts and crafts, and
-                            shopping. I would love a tutor that makes the lives of the students I tutor better."
-                        />
+                    <Grid container direction="row">
+                        <Grid item>
+                            <Typography className={classes.childTitle} variant="h6" gutterBottom>
+                                Add Child
+                            </Typography>
+                        </Grid>
+                        <Grid container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        className={classes.addChildBtn}>
+                            <Fab size="small" color="primary" aria-label="add">
+                                <AddIcon />
+                            </Fab>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
@@ -108,4 +88,4 @@ function TutoringInfoSection() {
     )
 }
 
-export default TutoringInfoSection
+export default ParentInfoSection;

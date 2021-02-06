@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(0, 5),
       },
       editButton: {
-          marginLeft: theme.spacing(35)
+          marginRight: theme.spacing(5)
       }
   }));  
 
@@ -26,12 +26,17 @@ function BasicInfoSection() {
             <CssBaseline />
             <Grid container>
                 <Grid className={classes.main} container direction="row">
-                    <Grid>
+                    <Grid justify="flex-start">
                         <Typography variant="h4">
                             Basic Info
                         </Typography>
                     </Grid>
-                    <Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-end"
+                        alignItems="center"
+                        >
                         <Button className={classes.editButton} variant="contained"><EditIcon />&nbsp;&nbsp;&nbsp;Edit</Button>
                     </Grid>
                 </Grid>
