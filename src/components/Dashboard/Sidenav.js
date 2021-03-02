@@ -9,21 +9,36 @@ import {
 } from "react-router-dom";
 import TutorSignUp from '../TutorSignUp';
 import Dashboard from './Dashboard';
+import SessionLog from '../SessionLog';
+import TutorSpecifics from '../TutorSpecifics'
 
 const drawerWidth = 240;
 const routes = [
   {
-    path: "/loggedin",
+    path: "/profile",
     exact: true,
-    mainContent: () => <h1>pants</h1>,
+    mainContent: () => <h1>add profile component here</h1>,
   },
   {
-    path: "/bubblegum",
-    mainContent: () => <TutorSignUp/>,
+    path: "/dashboardhome",
+    exact: true,
+    mainContent: () => <h1>dashboardhome</h1>,
   },
   {
-    path: "/shoelaces",
-    mainContent: () => <h2>Shoelaces</h2>,
+    path: "/sessionlog",
+    mainContent: () => <SessionLog/>,
+  },
+  {
+    path: "/addchild",
+    mainContent: () => <h1>add child component here</h1>,
+  },
+  {
+    path: "/tutorspecifics",
+    mainContent: () => <TutorSpecifics/>,
+  },
+  {
+    path: "/resources",
+    mainContent: () => <h1>add Resources Here</h1>,
   },
 ];
 
@@ -103,7 +118,7 @@ function Sidenav(props) {
                   color="primary"
                   fullWidth={true}
                   component={Link}
-                  to="/Dashboard"
+                  to="/Dashboardhome"
                 >
                   Dashboard
                 </Button>
@@ -117,7 +132,7 @@ function Sidenav(props) {
                   color="primary"
                   fullWidth={true}
                   component={Link}
-                  to="/Dashboard"
+                  to="/sessionlog"
                 >
                   Session Log
                 </Button>
@@ -131,7 +146,7 @@ function Sidenav(props) {
                   color="primary"
                   fullWidth={true}
                   component={Link}
-                  to="/Dashboard"
+                  to="/resources"
                 >
                   Resources
                 </Button>
@@ -145,23 +160,9 @@ function Sidenav(props) {
                   color="primary"
                   fullWidth={true}
                   component={Link}
-                  to="/Dashboard"
+                  to="/tutorspecifics"
                 >
                   Tutor Specifics
-                </Button>
-              </Grid>
-            </Box>
-            <Box alignContent="center" mt={1}>
-              <Grid item>
-                <Button
-                  variant="text"
-                  size="large"
-                  color="primary"
-                  fullWidth={true}
-                  component={Link}
-                  to="/Dashboard"
-                >
-                  Notes and Tools
                 </Button>
               </Grid>
             </Box>
@@ -184,7 +185,7 @@ function Sidenav(props) {
                 color="primary"
                 fullWidth={true}
                 component={Link}
-                to="/loggedin"
+                to="/dashboardhome"
               >
                 Dashboard
               </Button>
@@ -198,7 +199,7 @@ function Sidenav(props) {
                 color="primary"
                 fullWidth={true}
                 component={Link}
-                to="/shoelaces"
+                to="/sessionlog"
               >
                 Session Log
               </Button>
@@ -212,23 +213,9 @@ function Sidenav(props) {
                 color="primary"
                 fullWidth={true}
                 component={Link}
-                to="/bubblegum"
+                to="/addchild"
               >
-                Resources
-              </Button>
-            </Grid>
-          </Box>
-          <Box alignContent="center" mt={1}>
-            <Grid item>
-              <Button
-                variant="text"
-                size="large"
-                color="primary"
-                fullWidth={true}
-                component={Link}
-                to="/SampleFour"
-              >
-                Notes and Tools
+                Add Child
               </Button>
             </Grid>
           </Box>
@@ -263,7 +250,7 @@ function Sidenav(props) {
           {" "}
           {/*desktop view drawer*/}
           <Drawer classes={{ paper: classes.drawer }} variant="permanent" open>
-            {parentSidenav}
+            {tutorSidenav}
           </Drawer>
         </Hidden>
       </nav>

@@ -50,7 +50,7 @@ function App() {
               <TutorSignUp/>
             </Route>
             <Route path ="/dashboard" exact>
-              <Dashboard/>
+              <Sidenav/>
             </Route>
             <Route path="/admindashboard">
               <AdminDashboard/>
