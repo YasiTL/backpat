@@ -20,15 +20,13 @@ class TutorForm extends React.Component {
     }
 
     async pushNewTutorForm(newTutor) {
-        var docRef = await db.collection("tutors");
-        docRef.doc(newTutor.email).set(newTutor);
-        console.log("Send to firebase successful");
+        var docRef = db.collection("tutors");
+        await docRef.doc(newTutor.email).set(newTutor);
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state;
-        console.log(data);
         this.pushNewTutorForm(data);
 
     }
