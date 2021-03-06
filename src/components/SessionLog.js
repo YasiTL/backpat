@@ -51,9 +51,6 @@ function FeedbackStatus(prop) {
 }
 
 export default class SessionLog extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
