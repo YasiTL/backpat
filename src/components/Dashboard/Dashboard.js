@@ -1,7 +1,7 @@
 import React from "react";
 import Sidenav from "./Sidenav";
-import DashboardAlert from "../Alert/DashboardAlert";
-import { Typography } from "@material-ui/core";
+// import DashboardAlert from "../Alert/DashboardAlert";
+// import { Typography } from "@material-ui/core";
 
 const divStyle = {
   margin: "50px",

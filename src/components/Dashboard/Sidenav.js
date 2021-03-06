@@ -7,14 +7,13 @@ import {
   Switch,
   Link,
 } from "react-router-dom";
-import TutorSignUp from '../TutorSignUp';
-import Dashboard from './Dashboard';
+// import Dashboard from './Dashboard';
 import SessionLog from '../SessionLog';
 import TutorSpecifics from '../TutorSpecifics'
 
 const drawerWidth = 240;
 const routes = [
-  {
+  {  //TODO:Implement authorization to ensure client can only access accepted dashboard 
     path: "/profile",
     exact: true,
     mainContent: () => <h1>add profile component here</h1>,
@@ -83,7 +82,8 @@ function Sidenav(props) {
         <Grid item md>
           <Box mt={2} alignContent="center">
             Christian Razo{" "}
-            {/* //TODO come up with logic to display correct username*/}
+            {/* //TODO come up with logic to display correct username
+            */}
           </Box>
         </Grid>
         <Grid item xs={12}>
