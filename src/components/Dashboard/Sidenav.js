@@ -7,8 +7,6 @@ import {
   Switch,
   Link,
 } from "react-router-dom";
-import TutorSignUp from '../TutorSignUp';
-import Dashboard from './Dashboard';
 import SessionLog from '../SessionLog';
 import TutorSpecifics from '../TutorSpecifics'
 
@@ -20,7 +18,7 @@ const routes = [
     mainContent: () => <h1>add profile component here</h1>,
   },
   {
-    path: "/dashboardhome",
+    path: "/dashboard",
     exact: true,
     mainContent: () => <h1>dashboardhome</h1>,
   },
@@ -118,7 +116,7 @@ function Sidenav(props) {
                   color="primary"
                   fullWidth={true}
                   component={Link}
-                  to="/Dashboardhome"
+                  to="/dashboard"
                 >
                   Dashboard
                 </Button>
@@ -185,7 +183,7 @@ function Sidenav(props) {
                 color="primary"
                 fullWidth={true}
                 component={Link}
-                to="/dashboardhome"
+                to="/dashboard"
               >
                 Dashboard
               </Button>
@@ -250,7 +248,10 @@ function Sidenav(props) {
           {" "}
           {/*desktop view drawer*/}
           <Drawer classes={{ paper: classes.drawer }} variant="permanent" open>
-            {tutorSidenav}
+            {true &&
+              tutorSidenav}
+            {false &&
+              parentSidenav}
           </Drawer>
         </Hidden>
       </nav>

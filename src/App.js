@@ -13,7 +13,6 @@ import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
 import Login from './components/Login.js';
-import Dashboard from './components/Dashboard/Dashboard';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
 import Sidenav from './components/Dashboard/Sidenav';
