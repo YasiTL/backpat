@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Hidden, Drawer, Avatar, Grid, Box, Button } from "@material-ui/core";
+import { Hidden, Drawer, Avatar, Grid, Box, Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   BrowserRouter as Router,
@@ -9,14 +9,16 @@ import {
   Link,
 } from "react-router-dom";
 import SessionLog from '../SessionLog';
-import TutorSpecifics from '../TutorSpecifics'
+import TutorSpecifics from '../TutorSpecifics';
+import Profile from '../Profile/ProfilePage.jsx';
+import SampleProfile from '../../assets/sampleprofile.jpg'
 
 const drawerWidth = 240;
 const routes = [
   {  //TODO:Implement authorization to ensure client can only access accepted dashboard 
     path: "/profile",
     exact: true,
-    mainContent: () => <h1>add profile component here</h1>,
+    mainContent: () => <Profile/>,
   },
   {
     path: "/dashboard",
@@ -57,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Sidenav(props) {
   const [isMobileDrawerOpen, setMobileDrawer] = React.useState(false);
+  const [profileSrc, setProfile] = React.useState()
   const classes = useStyles();
 
   const profileGrid = (
@@ -72,16 +75,16 @@ function Sidenav(props) {
           <Grid item md={2}>
             <Avatar
               sizes="large"
+              src = {SampleProfile}
               alt="Christian Razo"
-              className={classes.profile}
+              className={classes.profile} 
             >
-              CR
             </Avatar>
           </Grid>
         </Box>
         <Grid item md>
           <Box mt={2} alignContent="center">
-            Christian Razo{" "}
+            Christian Razo
             {/* //TODO come up with logic to display correct username
             */}
           </Box>
@@ -94,9 +97,9 @@ function Sidenav(props) {
               color="primary"
               fullWidth={true}
               component={Link}
-              to="/Profile"
+              to="/profile"
             >
-              View Profile
+              <Typography>View Profile</Typography>
             </Button>
           </Box>
         </Grid>
@@ -108,9 +111,10 @@ function Sidenav(props) {
   const tutorSidenav = (
     <div>
       {profileGrid}
-        <Box mt={10}>
+      <hr></hr>
+        <Box mt={4}> {/*10*/}
           <Grid container direction="column" justify="flex start">
-            <Box alignContent="center" mt={1}>
+            <Box alignContent="center" mt={1} mb = {2}>
               <Grid item>
                 <Button
                   variant="text"
@@ -120,11 +124,11 @@ function Sidenav(props) {
                   component={Link}
                   to="/dashboard"
                 >
-                  Dashboard
+                  <Typography>Dashboard</Typography>
                 </Button>
               </Grid>
             </Box>
-            <Box alignContent="center" mt={1}>
+            <Box alignContent="center" mt={1} mb = {2}>
               <Grid item>
                 <Button
                   variant="text"
@@ -134,11 +138,11 @@ function Sidenav(props) {
                   component={Link}
                   to="/sessionlog"
                 >
-                  Session Log
+                  <Typography>Session Log</Typography>
                 </Button>
               </Grid>
             </Box>
-            <Box alignContent="center" mt={1}>
+            <Box alignContent="center" mt={1} mb = {2}>
               <Grid item>
                 <Button
                   variant="text"
@@ -148,11 +152,11 @@ function Sidenav(props) {
                   component={Link}
                   to="/resources"
                 >
-                  Resources
+                  <Typography>Resources</Typography>
                 </Button>
               </Grid>
             </Box>
-            <Box alignContent="center" mt={1}>
+            <Box alignContent="center" mt={1} mb = {2}>
               <Grid item>
                 <Button
                   variant="text"
@@ -162,7 +166,7 @@ function Sidenav(props) {
                   component={Link}
                   to="/tutorspecifics"
                 >
-                  Tutor Specifics
+                  <Typography>Tutor Specifics</Typography>
                 </Button>
               </Grid>
             </Box>
@@ -175,9 +179,10 @@ function Sidenav(props) {
   const parentSidenav = (
     <div>
       {profileGrid}
+      <hr></hr>
       <Box mt={10}>
         <Grid container direction="column" justify="flex start">
-          <Box alignContent="center" mt={1}>
+          <Box alignContent="center" mt={1} mb = {2}>
             <Grid item>
               <Button
                 variant="text"
@@ -187,11 +192,11 @@ function Sidenav(props) {
                 component={Link}
                 to="/dashboard"
               >
-                Dashboard
+                <Typography>Dashboard</Typography>
               </Button>
             </Grid>
           </Box>
-          <Box alignContent="center" mt={1}>
+          <Box alignContent="center" mt={1} mb = {2}>
             <Grid item>
               <Button
                 variant="text"
@@ -201,11 +206,11 @@ function Sidenav(props) {
                 component={Link}
                 to="/sessionlog"
               >
-                Session Log
+                <Typography>Session Log</Typography>
               </Button>
             </Grid>
           </Box>
-          <Box alignContent="center" mt={1}>
+          <Box alignContent="center" mt={1} mb = {2}>
             <Grid item>
               <Button
                 variant="text"
@@ -215,7 +220,7 @@ function Sidenav(props) {
                 component={Link}
                 to="/addchild"
               >
-                Add Child
+                <Typography>Add Child</Typography>
               </Button>
             </Grid>
           </Box>
