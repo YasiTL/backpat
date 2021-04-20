@@ -1,5 +1,10 @@
 import React from 'react'
 import firebase from 'firebase'
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
+import 'firebaseui/dist/firebaseui.css'
+import './AdminLogin.css'
+
+
 require('firebase/auth')
 var firebaseui = require('firebaseui');
 
@@ -19,7 +24,9 @@ ui.start('#firebaseui-auth-container', {
 function AdminLogin() {
   return (
       <div>
+        <ScopedCssBaseline>
         <div id="firebaseui-auth-container"></div>
+        </ScopedCssBaseline>
           Admin Login
       </div>
   );
