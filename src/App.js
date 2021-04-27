@@ -12,7 +12,7 @@ import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard";
 import AdminLogin from "./components/AdminLogin";
 import Sidenav from "./components/Dashboard/Sidenav";
-import Faq from "./components/Faq";
+import FaqPage from "./components/FaqPage";
 
 // Global Theme Changes
 const theme = createMuiTheme({
@@ -57,7 +57,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/faq" exact>
-              <Faq />
+              <FaqPage />
             </Route>
           </Switch>
         </Router>
