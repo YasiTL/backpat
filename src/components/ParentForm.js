@@ -2,6 +2,12 @@ import React from 'react';
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 import { db } from "../services/firebase"
+import firebase from 'firebase'
+
+//import Modal from 'components/modal.jsx';
+require('firebase/auth')
+
+//const auth = db.auth();
 
 class ParentForm extends React.Component {
     constructor(props) {
@@ -11,6 +17,7 @@ class ParentForm extends React.Component {
             firstName: "John",
             lastName: "Doe",
             email: "blank@gmail.com",
+            password: "password",
             phone: "1234567890",
             timezone: "CST",
             essential: "True"
@@ -21,10 +28,20 @@ class ParentForm extends React.Component {
         //onChange={e => this.setState({ firstName: e.target.value})}
     }
     async pushNewParentForm(newParent) {
+        // Create an account:
+        const emailTemp = newParent.email
+        const passwordTemp = newParent.password
+        firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp).then(cred => {
+            console.log(cred.user);
+            const modal = document.querySelector('#modal-signup');
+            firebase.auth().M.Modal.getInstance(modal).close();
+            firebase.auth().signupForm.reset();
+        })
+
+        // Create user data collection/document:
         var docRef = db.collection("parents");
         await docRef.doc(newParent.email).set(newParent);
     }
-
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
@@ -65,6 +82,16 @@ class ParentForm extends React.Component {
                         value={this.state.email}
                         label="Email"
                         onChange={e => this.setState({ email: e.target.value })}
+                    />
+                    <br /><br /><br />
+                    <TextField
+                        required
+                        fullWidth
+                        name="password"
+                        type="text"
+                        value={this.state.password}
+                        label="Password"
+                        onChange={e => this.setState({ password: e.target.value })}
                     />
                     <br /><br /><br />
                     <InputMask
