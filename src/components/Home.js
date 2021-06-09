@@ -26,7 +26,7 @@ function Home() {
                 <Button variant="text" color="secondary" size = "large" component={Link} to="/tutorsignup"><Typography>Tutor Sign Up</Typography></Button> 
               </Grid>  
               <Grid item xs = {2}>
-                <Button variant="text" color="secondary" size = "large" component={Link} to="/AdminLogin"><Typography>Login</Typography></Button>
+                <Button variant="text" color="secondary" size = "large" component={Link} to="/Login"><Typography>Login</Typography></Button>
               </Grid>
             </Grid>
          </center>
