@@ -13,7 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
-import { db } from "../services/firebase"
+import { db } from "../../services/firebase"
 
 const useRowStyles = makeStyles({
   root: {
@@ -46,21 +46,21 @@ function Row(props) {
         <TableCell align="right">{row.university}</TableCell>
       </TableRow>
       <TableRow>
-      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-          <div>Currently No Data to Show</div>
+            <div>Currently No Data to Show</div>
           </Collapse>
-          </TableCell>
+        </TableCell>
       </TableRow>
     </React.Fragment>
   );
 }
 
-class AdminDashboard extends React.Component {
-  constructor(props){
+class UserTable extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
-        tutor_data: [],
+      tutor_data: [],
     };
   }
 
@@ -71,36 +71,36 @@ class AdminDashboard extends React.Component {
   async loadData() {
     let r = await db.collection("tutors").get();
     let data = [];
-    r.forEach( doc =>
+    r.forEach(doc =>
       data.push(doc.data())
     );
-    this.setState({ tutor_data: data});
+    this.setState({ tutor_data: data });
   }
 
   render() {
-    return(
-     <TableContainer>
-      <Table aria-label="collapsible table">
-        <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell> Email </TableCell>
-            <TableCell align="right">First Name</TableCell>
-            <TableCell align="right">Last Name&nbsp;(g)</TableCell>
-            <TableCell align="right">Phone Number&nbsp;(g)</TableCell>
-            <TableCell align="right">Timezone&nbsp;(g)</TableCell>
-            <TableCell align="right">University&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {this.state.tutor_data.map((row) => (
-            <Row key={row.email} row={row} />
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    return (
+      <TableContainer>
+        <Table aria-label="collapsible table">
+          <TableHead>
+            <TableRow>
+              <TableCell />
+              <TableCell> Email </TableCell>
+              <TableCell align="right">First Name</TableCell>
+              <TableCell align="right">Last Name&nbsp;(g)</TableCell>
+              <TableCell align="right">Phone Number&nbsp;(g)</TableCell>
+              <TableCell align="right">Timezone&nbsp;(g)</TableCell>
+              <TableCell align="right">University&nbsp;(g)</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {this.state.tutor_data.map((row) => (
+              <Row key={row.email} row={row} />
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     )
   }
 }
 
-export default AdminDashboard;
+export default UserTable;
