@@ -22,7 +22,6 @@ class ParentForm extends React.Component {
             timezone: "CST",
             essential: "True"
 
-
         };
         //this.handleInputChange = this.handleInputChange.bind(this);
         //onChange={e => this.setState({ firstName: e.target.value})}
@@ -53,6 +52,7 @@ class ParentForm extends React.Component {
         console.log("ParentForm.js")
         return (
             <form onSubmit={this.handleSubmit} id="ParentForm" autoComplete="off">
+
                 <div>                        
                     <TextField
                         required
@@ -102,27 +102,55 @@ class ParentForm extends React.Component {
                         <TextField
                             required
                             fullWidth
-                            name="phone"
-                            label="Phone"
-                            ref={this.inputRef}
-                            type="text"/>
-                    </InputMask>
-                    <br /><br /><br />
-                    <InputLabel id="timezone-label">Timezone</InputLabel>
-                    <Select
-                        required
-                        fullWidth
-                        labelId="timezone-label"
-                        value={this.state.timezone}
-                        onChange={e => this.setState({ timezone: e.target.value })}>
-                        <MenuItem value="PST">Pacific Standard Time</MenuItem>
-                        <MenuItem value="MST">Mountain Standard Time</MenuItem>
-                        <MenuItem value="CST">Central Standard Time</MenuItem>
-                        <MenuItem value="EST">Eastern Standard Time</MenuItem>
-                        <MenuItem value="AST">Alaska Standard Time</MenuItem>
-                        <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
-                    </Select>
-                    <br /><br /><br />
+                            name="lastName"
+                            type="text"
+                            value={this.state.lastName}
+                            label="Parent's Last Name"
+                            onChange={e => this.setState({ lastName: e.target.value })}
+                        />
+                    </Box>
+                    <Box mt={4}>
+                        <TextField
+                            required
+                            fullWidth
+                            name="email"
+                            type="text"
+                            value={this.state.email}
+                            label="Parent's Email"
+                            onChange={e => this.setState({ email: e.target.value })}
+                        />
+                    </Box>
+                    <Box mt={4}>
+                        <InputMask
+                            mask="(999)-999-9999"
+                            value={this.state.phone}
+                            onChange={e => this.setState({ phone: e.target.value })}
+                        >
+                            <TextField
+                                required
+                                fullWidth
+                                name="phone"
+                                label="Phone"
+                                ref={this.inputRef}
+                                type="text" />
+                        </InputMask>
+                    </Box>
+                    <Box mt={6}>
+                        <InputLabel id="timezone-label">Timezone</InputLabel>
+                        <Select
+                            required
+                            fullWidth
+                            labelId="timezone-label"
+                            value={this.state.timezone}
+                            onChange={e => this.setState({ timezone: e.target.value })}>
+                            <MenuItem value="PST">Pacific Standard Time</MenuItem>
+                            <MenuItem value="MST">Mountain Standard Time</MenuItem>
+                            <MenuItem value="CST">Central Standard Time</MenuItem>
+                            <MenuItem value="EST">Eastern Standard Time</MenuItem>
+                            <MenuItem value="AST">Alaska Standard Time</MenuItem>
+                            <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
+                        </Select>
+                    </Box>
                 </div>
 
                 <Box display="flex" mt={5} justifyContent="center">

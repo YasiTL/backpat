@@ -12,17 +12,17 @@ function TutorSignUp(){
                 <Link to="/">Home</Link>
             </li>
             <Box display="flex" mt={10}>
-            <Grid container spacing={3}>
-              <Grid item xs />
-              <Grid item xs={5}>
+            <Grid container >
+              <Grid item sm/>
+              <Grid item xs={12} sm={8}>
                 <Box display="flex" justifyContent="center" flexWrap="column">
-                  <Typography variant="h2" text-align="center">Become a Tutor</Typography>
+                  <Typography variant="h2" align="center">Become a Tutor</Typography>
                 </Box>
-                <Box mt={2}>
+                <Box mt={4} ml={3} mr={3}>
                   <TutorForm/>
                 </Box>
               </Grid>
-              <Grid item xs />
+              <Grid item sm/>
             </Grid>
             </Box>
         </div>
