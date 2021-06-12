@@ -14,7 +14,7 @@ import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
 import Login from './components/Login.js';
 import AdminDashboard from './components/AdminDashboard';
-import AdminLogin from './components/AdminLogin';
+import OldLogin from './components/oldLogin';
 import Sidenav from './components/Dashboard/Sidenav';
 
 // Global Theme Changes
@@ -54,8 +54,8 @@ function App() {
             <Route path="/admindashboard">
               <AdminDashboard/>
             </Route>
-            <Route path="/adminlogin">
-              <AdminLogin/>
+            <Route path="/login">
+              <Login/>
             </Route>
             <Route path="/" exact>
               <Home/>

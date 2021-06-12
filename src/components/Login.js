@@ -32,4 +32,4 @@ function Login() {
   );
 }
 
-export default AdminLogin;
+export default Login;
