@@ -12,6 +12,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
+import ChildSignUp from './components/ChildSignUp.js';
 import Login from './components/Login.js';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
