@@ -1,5 +1,5 @@
 import React from 'react'
-import TermsofService from "../assets/BackPatTermsOfService.pdf";
+import TermsofService from "../assets/backpatTermsOfService.pdf";
 import { TextField, Button, Box, Select, MenuItem, InputLabel, Checkbox } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 import { db } from "../services/firebase"
