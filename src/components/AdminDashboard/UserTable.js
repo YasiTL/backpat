@@ -8,12 +8,27 @@ import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import Collapse from '@material-ui/core/Collapse';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
 
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 import { db } from "../../services/firebase"
+
+const UserSearch = ({users}) => {
+  // const [users] = React.useState();
+  console.log(users)
+
+  return (
+    <div>
+      <FormControl fullWidth autoComplete="off">
+        <TextField id="user-search" label="Search for a User" variant="outlined" />
+      </FormControl>
+    </div>
+  )
+}
 
 const useRowStyles = makeStyles({
   root: {
@@ -36,14 +51,11 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row">
-          {row.email}
-        </TableCell>
-        <TableCell align="right">{row.firstName}</TableCell>
-        <TableCell align="right">{row.lastName}</TableCell>
-        <TableCell align="right">{row.phone}</TableCell>
-        <TableCell align="right">{row.timezone}</TableCell>
-        <TableCell align="right">{row.university}</TableCell>
+        <TableCell>ID Holder</TableCell>
+        <TableCell>{row.email}</TableCell>
+        <TableCell>{row.firstName}</TableCell>
+        <TableCell>{row.lastName}</TableCell>
+        <TableCell>{row.timezone}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -79,17 +91,18 @@ class UserTable extends React.Component {
 
   render() {
     return (
+      <>
+      <UserSearch users={this.state.tutor_data}></UserSearch>
       <TableContainer>
         <Table aria-label="collapsible table">
           <TableHead>
             <TableRow>
-              <TableCell />
+              <TableCell></TableCell>
+              <TableCell>User ID</TableCell>
               <TableCell> Email </TableCell>
-              <TableCell align="right">First Name</TableCell>
-              <TableCell align="right">Last Name&nbsp;(g)</TableCell>
-              <TableCell align="right">Phone Number&nbsp;(g)</TableCell>
-              <TableCell align="right">Timezone&nbsp;(g)</TableCell>
-              <TableCell align="right">University&nbsp;(g)</TableCell>
+              <TableCell>First Name</TableCell>
+              <TableCell>Last Name</TableCell>
+              <TableCell>Timezone</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -99,6 +112,7 @@ class UserTable extends React.Component {
           </TableBody>
         </Table>
       </TableContainer>
+      </>
     )
   }
 }
