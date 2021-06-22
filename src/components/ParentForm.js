@@ -104,7 +104,7 @@ class ParentForm extends React.Component {
                 <Box display="flex" mt={5} justifyContent="center">
                     <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
                 </Box>
-</form>
+            </form>
         )
     }
 }
