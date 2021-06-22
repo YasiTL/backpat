@@ -7,11 +7,11 @@ class ChildForm extends React.Component {
         super(props);
         this.inputRef = React.createRef();
         this.state = {
-            firstName: "jimmy",
-            lastName: "kid",
-            age: "10",
-            grade: "4",
-            bio: "I like crayons."
+            firstName: "",
+            lastName: "",
+            age: "",
+            grade: "",
+            bio: ""
         };
     }
 
@@ -25,6 +25,46 @@ class ChildForm extends React.Component {
         console.log("ChildForm.js")
         return (
             <form onSubmit={this.handleSubmit} id="ChildForm" autoComplete="off">
+                <div>
+                    <Box mt={4}>
+                        <TextField
+                            required
+                            fullWidth
+                            name="firstName"
+                            type="text"
+                            value={this.state.firstName}
+                            label="Student's First Name"
+                            onChange={e => this.setState({ firstName: e.target.value })}
+                        />
+                    </Box>
+                    <Box mt={4}>
+                        <TextField
+                            required
+                            fullWidth
+                            name="lastName"
+                            type="text"
+                            value={this.state.lastName}
+                            label="Student's Last Name"
+                            onChange={e => this.setState({ lastName: e.target.value })}
+                        />
+                    </Box>
+                    <Box mt={4}>
+                        <TextField
+                            required
+                            fullWidth
+                            name="age"
+                            type="number"
+                            InputProps= {{ inputProps: { min: 0, max: 99 } }}
+                        />
+                    </Box>
+                </div>
+            </form>
+        )
+    }
+}
+export default ChildForm
+
+/*
                 <div>                        
                     <TextField
                         required
@@ -85,10 +125,4 @@ class ChildForm extends React.Component {
                 <Box display="flex" mt={5} justifyContent="center">
                     <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
                 </Box>
-
-            </form>
-        )
-    }
-}
-export default ChildForm
-
+ */

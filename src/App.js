@@ -12,7 +12,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
-import ChildSignUp from './components/ChildSignUp.js';
+import StudentSignUp from './components/StudentSignUp.js';
 import Login from './components/Login.js';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
@@ -43,8 +43,8 @@ function App() {
             <Route path="/parentsignup">
               <ParentSignUp/>
             </Route>
-            <Route path="/childsignup">
-              <ChildSignUp/>
+            <Route path="/studentsignup">
+              <StudentSignUp/>
             </Route>
             <Route path="/login">
               <Login/>

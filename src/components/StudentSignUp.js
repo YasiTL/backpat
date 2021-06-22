@@ -1,5 +1,5 @@
 import React from 'react';
-import ChildForm from './ChildForm';
+import ChildForm from './StudentForm';
 import { Link } from "react-router-dom"
 import { Grid, Box, Typography } from "@material-ui/core"
 
@@ -14,7 +14,7 @@ function ChildSignUp() {
               <Grid item xs />
               <Grid item xs={5}>
                 <Box display="flex" justifyContent="center" flexWrap="column">
-                  <Typography variant="h2" text-align="center">Add a Child</Typography>
+                  <Typography variant="h2" text-align="center">Add a Student</Typography>
                 </Box>
                 <Box mt={2} textAlign="center">
                     Being paired up with a tutor is on a first-come, first-serve basis.
