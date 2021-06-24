@@ -17,10 +17,10 @@ class ParentForm extends React.Component {
             firstName: "John",
             lastName: "Doe",
             email: "blank@gmail.com",
-            password: "password",
             phone: "1234567890",
+            password: "password",
             timezone: "CST",
-            essential: "True"
+            bio: "Hello! This is a parent bio."
 
         };
         //this.handleInputChange = this.handleInputChange.bind(this);
@@ -52,18 +52,19 @@ class ParentForm extends React.Component {
         console.log("ParentForm.js")
         return (
             <form onSubmit={this.handleSubmit} id="ParentForm" autoComplete="off">
-
-                <div>                        
-                    <TextField
-                        required
-                        fullWidth
-                        name="firstName"
-                        type="text"
-                        value={this.state.firstName}
-                        label="Parent's First Name"
-                        onChange={e => this.setState({ firstName: e.target.value })}
-                    />
-                    <br /><br /><br />
+                <div>
+                    <Box mb={4}>
+                        <TextField
+                            required
+                            fullWidth
+                            name="firstName"
+                            type="text"
+                            value={this.state.firstName}
+                            label="First Name"
+                            onChange={e => this.setState({ firstName: e.target.value })}
+                        />
+                    </Box>
+                    <Box mb={4}>
                     <TextField
                         required
                         fullWidth
@@ -73,7 +74,8 @@ class ParentForm extends React.Component {
                         label="Last Name"
                         onChange={e => this.setState({ lastName: e.target.value })}
                     />
-                    <br /><br /><br />
+                    </Box>
+                    <Box mb={4}>
                     <TextField
                         required
                         fullWidth
@@ -83,80 +85,66 @@ class ParentForm extends React.Component {
                         label="Email"
                         onChange={e => this.setState({ email: e.target.value })}
                     />
-                    <br /><br /><br />
+                    </Box>
+                    <Box mb={4}>
+                    <InputMask
+                        mask="(999)-999-9999"
+                        value={this.state.phone}
+                        onChange={e => this.setState({ phone: e.target.value })}
+                    >
+                        <TextField
+                            required
+                            fullWidth
+                            name="phone"
+                            label="Phone"
+                            ref={this.inputRef}
+                            type="text" />
+                    </InputMask>
+                    </Box>
+                    <Box mb={4}>
                     <TextField
                         required
                         fullWidth
                         name="password"
                         type="text"
-                        value={this.state.password}
+                        value={this.state.university}
                         label="Password"
                         onChange={e => this.setState({ password: e.target.value })}
                     />
-                    <br /><br /><br />
-                    <InputMask
-                        mask="(999)-999-9999"
-                        value={this.state.phone}
-                        onChange={e => this.setState({ phone: e.target.value })}
-                        >
-                        <TextField
-                            required
-                            fullWidth
-                            name="lastName"
-                            type="text"
-                            value={this.state.lastName}
-                            label="Parent's Last Name"
-                            onChange={e => this.setState({ lastName: e.target.value })}
-                        />
                     </Box>
-                    <Box mt={4}>
-                        <TextField
-                            required
-                            fullWidth
-                            name="email"
-                            type="text"
-                            value={this.state.email}
-                            label="Parent's Email"
-                            onChange={e => this.setState({ email: e.target.value })}
-                        />
+                    <Box mb={4} mt={6}>
+                    <InputLabel id="timezone-label">Timezone</InputLabel>
+                    <Select
+                        required
+                        fullWidth
+                        labelId="timezone-label"
+                        value={this.state.timezone}
+                        onChange={e => this.setState({ timezone: e.target.value })}>
+                        <MenuItem value="PST">Pacific Standard Time</MenuItem>
+                        <MenuItem value="MST">Mountain Standard Time</MenuItem>
+                        <MenuItem value="CST">Central Standard Time</MenuItem>
+                        <MenuItem value="EST">Eastern Standard Time</MenuItem>
+                        <MenuItem value="AST">Alaska Standard Time</MenuItem>
+                        <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
+                    </Select>
                     </Box>
-                    <Box mt={4}>
-                        <InputMask
-                            mask="(999)-999-9999"
-                            value={this.state.phone}
-                            onChange={e => this.setState({ phone: e.target.value })}
-                        >
-                            <TextField
-                                required
-                                fullWidth
-                                name="phone"
-                                label="Phone"
-                                ref={this.inputRef}
-                                type="text" />
-                        </InputMask>
-                    </Box>
-                    <Box mt={6}>
-                        <InputLabel id="timezone-label">Timezone</InputLabel>
-                        <Select
-                            required
-                            fullWidth
-                            labelId="timezone-label"
-                            value={this.state.timezone}
-                            onChange={e => this.setState({ timezone: e.target.value })}>
-                            <MenuItem value="PST">Pacific Standard Time</MenuItem>
-                            <MenuItem value="MST">Mountain Standard Time</MenuItem>
-                            <MenuItem value="CST">Central Standard Time</MenuItem>
-                            <MenuItem value="EST">Eastern Standard Time</MenuItem>
-                            <MenuItem value="AST">Alaska Standard Time</MenuItem>
-                            <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
-                        </Select>
+                    <Box mb={4}>
+                    <TextField
+                        required
+                        fullWidth
+                        multiline
+                        rows={4}
+                        name="bio"
+                        type="text"
+                        value={this.state.bio}
+                        label="Short Bio"
+                        onChange={e => this.setState({ bio: e.target.value })}
+                    />
                     </Box>
                 </div>
-
                 <Box display="flex" mt={5} justifyContent="center">
                     <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
                 </Box>
-
             </form>
         )
     }
