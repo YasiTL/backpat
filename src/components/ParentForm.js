@@ -1,5 +1,6 @@
 import React from 'react';
-import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
+import TermsofService from "../assets/backpatTermsOfService.pdf";
+import { TextField, Button, Box, Select, MenuItem, InputLabel, Checkbox } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 import { db } from "../services/firebase"
 
@@ -99,6 +100,9 @@ class ParentForm extends React.Component {
                             <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
                         </Select>
                     </Box>
+                    <Checkbox
+                        required>
+                    </Checkbox> I agree to the <a href={TermsofService} target="_blank" rel="noopener noreferrer">Terms of Service</a>
                 </div>
 
                 <Box display="flex" mt={5} justifyContent="center">
