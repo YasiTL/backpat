@@ -9,27 +9,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import Collapse from '@material-ui/core/Collapse';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-
+import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 import { db } from "../../services/firebase"
 
-const UserSearch = ({users}) => {
-  // const [users] = React.useState();
-  console.log(users)
-
-  return (
-    <div>
-      <FormControl fullWidth autoComplete="off">
-        <TextField id="user-search" label="Search for a User" variant="outlined" />
-      </FormControl>
-    </div>
-  )
-}
-
+//Apply the CSS for all element types for all current parent's direct children
 const useRowStyles = makeStyles({
   root: {
     '& > *': {
@@ -51,7 +38,6 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell>ID Holder</TableCell>
         <TableCell>{row.email}</TableCell>
         <TableCell>{row.firstName}</TableCell>
         <TableCell>{row.lastName}</TableCell>
@@ -60,7 +46,23 @@ function Row(props) {
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <div>Currently No Data to Show</div>
+            <Grid container spacing={3}>
+              <Grid xs item>
+                <div>First Name: {row.firstName}</div>
+                <div>Last Name: {row.lastName}</div>
+                <div>Email: {row.email}</div>
+                <div>Phone: {row.phone}</div>
+                <div>Timezone: {row.timezone}</div>
+              </Grid>
+              <Grid xs item>
+                <div>Subjects: {row.subjects}</div>
+                <div>Experience: {row.experience}</div>
+                <div>Availability: {row.availability}</div>
+                <div>Experience: {row.experience}</div>
+                <div>Bio: {row.bio}</div>
+                <div>Request Proof of Volunteer Hours?: {row.isAskingProofOfHours}</div>
+              </Grid>
+            </Grid>
           </Collapse>
         </TableCell>
       </TableRow>
@@ -72,46 +74,65 @@ class UserTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tutor_data: [],
+      userData: [],
+      filteredUserData: [],
+      inputValue: '',
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
+    // On component load, pull in all data from firebase
     this.loadData();
   }
 
   async loadData() {
-    let r = await db.collection("tutors").get();
+    const users = await db.collection("tutors").get();
     let data = [];
-    r.forEach(doc =>
+    users.forEach(doc =>
       data.push(doc.data())
     );
-    this.setState({ tutor_data: data });
+    this.setState({ userData: data });
+    this.setState({ filteredUserData: data });
+  }
+
+  handleChange(event) {
+    //Set inputValue state equal to the user typed value in the inputField
+    const textFieldInput = event.target.value
+    this.setState({ inputValue: textFieldInput },
+      () => { console.log(textFieldInput) });
+
+    const filteredFromSearchInput = this.state.userData.filter(user => user.email.includes(textFieldInput));
+    this.setState({ filteredUserData: filteredFromSearchInput });
   }
 
   render() {
     return (
       <>
-      <UserSearch users={this.state.tutor_data}></UserSearch>
-      <TableContainer>
-        <Table aria-label="collapsible table">
-          <TableHead>
-            <TableRow>
-              <TableCell></TableCell>
-              <TableCell>User ID</TableCell>
-              <TableCell> Email </TableCell>
-              <TableCell>First Name</TableCell>
-              <TableCell>Last Name</TableCell>
-              <TableCell>Timezone</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.state.tutor_data.map((row) => (
-              <Row key={row.email} row={row} />
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+        <TextField
+          label="Search by User Email"
+          variant="outlined"
+          value={this.state.inputValue}
+          onChange={this.handleChange}
+          fullWidth />
+        <TableContainer>
+          <Table aria-label="collapsible table">
+            <TableHead>
+              <TableRow>
+                <TableCell></TableCell>
+                <TableCell> Email </TableCell>
+                <TableCell>First Name</TableCell>
+                <TableCell>Last Name</TableCell>
+                <TableCell>Timezone</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.state.filteredUserData.map((row) => (
+                <Row key={row.email} row={row} />
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </>
     )
   }
