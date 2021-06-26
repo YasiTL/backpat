@@ -48,19 +48,19 @@ function Row(props) {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Grid container spacing={3}>
               <Grid xs item>
-                <div>First Name: {row.firstName}</div>
-                <div>Last Name: {row.lastName}</div>
-                <div>Email: {row.email}</div>
-                <div>Phone: {row.phone}</div>
-                <div>Timezone: {row.timezone}</div>
+                <div>First Name: <TextField defaultValue={row.firstName}/></div>
+                <div>Last Name: <TextField defaultValue={row.lastName}/></div>
+                <div>Email: <TextField defaultValue={row.email}/></div>
+                <div>Phone: <TextField defaultValue={row.phone}/></div>
+                <div>Timezone: <TextField defaultValue={row.timezone}/></div>
               </Grid>
               <Grid xs item>
-                <div>Subjects: {row.subjects}</div>
-                <div>Experience: {row.experience}</div>
-                <div>Availability: {row.availability}</div>
-                <div>Experience: {row.experience}</div>
-                <div>Bio: {row.bio}</div>
-                <div>Request Proof of Volunteer Hours?: {row.isAskingProofOfHours}</div>
+                <div>Subjects: <TextField defaultValue={row.subjects}/></div>
+                <div>Experience: <TextField defaultValue={row.experience}/></div>
+                <div>Availability: <TextField defaultValue={row.availability}/></div>
+                <div>Experience: <TextField defaultValue={row.experience}/></div>
+                <div>Bio: <TextField defaultValue={row.bio}/></div>
+                <div>Request Proof of Volunteer Hours?: <TextField defaultValue={row.isAskingProofOfHours}/></div>
               </Grid>
             </Grid>
           </Collapse>
