@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button, Box } from '@material-ui/core';
+import { TextField, Button, Box, Select, MenuItem, MenuList, InputLabel} from '@material-ui/core';
 
 
 class ChildForm extends React.Component {
@@ -11,6 +11,7 @@ class ChildForm extends React.Component {
             lastName: "",
             age: "",
             grade: "",
+            classes: [],
             bio: ""
         };
     }
@@ -54,8 +55,51 @@ class ChildForm extends React.Component {
                             fullWidth
                             name="age"
                             type="number"
-                            InputProps= {{ inputProps: { min: 0, max: 99 } }}
+                            InputProps= {{ inputProps: { min: 5, max: 18 } }}
+                            value={this.state.age}
+                            label="Age"
+                            onChange={e => this.setState({ age: e.target.value })}
                         />
+                    </Box>
+                    <Box mt={4}>
+                        <InputLabel id="grade">Grade</InputLabel>
+                        <Select
+                            required
+                            fullWidth
+                            labelId="grade"
+                            value={this.state.grade}
+                            onChange={e => this.setState({ grade: e.target.value })}>
+                            <MenuItem value="K">K</MenuItem>
+                            <MenuItem value="1">1</MenuItem>
+                            <MenuItem value="2">2</MenuItem>
+                            <MenuItem value="3">3</MenuItem>
+                            <MenuItem value="4">4</MenuItem>
+                            <MenuItem value="5">5</MenuItem>
+                            <MenuItem value="6">6</MenuItem>
+                            <MenuItem value="7">7</MenuItem>
+                            <MenuItem value="8">8</MenuItem>
+                            <MenuItem value="9">9</MenuItem>
+                            <MenuItem value="10">10</MenuItem>
+                            <MenuItem value="11">11</MenuItem>
+                            <MenuItem value="12">12</MenuItem>
+                        </Select>
+                    </Box>
+                    <Box mt={4}>
+                        <InputLabel id="classes">Class(es)</InputLabel>
+                        <Select
+                            required 
+                            fullWidth
+                            multiple
+                            value={this.state.classes}
+                            onChange={e => this.setState({ classes: [...this.state.classes, e.target.value] })}>
+                            <MenuItem value="A+M">Art and Music</MenuItem>
+                            <MenuItem value="HUM">English</MenuItem>
+                            <MenuItem value="LANG">Foreign Language</MenuItem>
+                            <MenuItem value="HIST">History</MenuItem>
+                            <MenuItem value="CS">Computer Science</MenuItem>
+                            <MenuItem value="MATH">Mathematics</MenuItem>
+                            <MenuItem value="SCI">Science</MenuItem>
+                        </Select>
                     </Box>
                 </div>
             </form>
