@@ -43,7 +43,6 @@ class ParentForm extends React.Component {
     }
 
     render() {
-        console.log("ParentForm.js")
         return (
             <form onSubmit={this.handleSubmit} id="ParentForm" autoComplete="off">
                 <div>
@@ -100,7 +99,7 @@ class ParentForm extends React.Component {
                         required
                         fullWidth
                         name="password"
-                        type="text"
+                        type="password"
                         value={this.state.university}
                         label="Password"
                         onChange={e => this.setState({ password: e.target.value })}
