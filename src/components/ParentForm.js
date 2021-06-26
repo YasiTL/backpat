@@ -30,13 +30,7 @@ class ParentForm extends React.Component {
         // Create an account:
         const emailTemp = newParent.email
         const passwordTemp = newParent.password
-        firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp).then(cred => {
-            console.log(cred.user);
-            const modal = document.querySelector('#modal-signup');
-            firebase.auth().M.Modal.getInstance(modal).close();
-            firebase.auth().signupForm.reset();
-        })
-
+        firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp);
         // Create user data collection/document:
         var docRef = db.collection("parents");
         await docRef.doc(newParent.email).set(newParent);
