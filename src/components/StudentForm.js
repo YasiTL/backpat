@@ -156,7 +156,7 @@ class ChildForm extends React.Component {
                                         type="time"
                                         defaultValue="08:00"
                                         inputProps={{
-                                            step: 300, //5 min interval
+                                            step: 900, //15 min interval
                                         }}
                                     />
                                 </Grid>
@@ -169,7 +169,7 @@ class ChildForm extends React.Component {
                                         type="time"
                                         defaultValue="15:30"
                                         inputProps={{
-                                            step: 300, //5 min interval
+                                            step: 900, //15 min interval
                                         }}
                                     />
                                 </Grid>
