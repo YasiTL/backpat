@@ -24,6 +24,7 @@ class ChildForm extends React.Component {
             age: "",
             grade: "",
             classes: [],
+            availability: [{day: "", startTime: "", endTime: ""}],
             bio: ""
         };
     }
@@ -127,6 +128,7 @@ class ChildForm extends React.Component {
                     </Box>      
                     <Box mt={4}>
                         <div> My child is available on:</div>
+                        <br/>
                         <InputLabel id="day">Day</InputLabel>
                             <Select
                                 required
