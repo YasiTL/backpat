@@ -57,18 +57,18 @@ export default function SimpleTabs() {
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Tutors"/>
-          <Tab label="Students"/>
+          <Tab label="Parents"/>
           <Tab label="Admins"/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <UserTable></UserTable>
+        <UserTable selectedUserTab='tutors'></UserTable>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Students
+        <UserTable selectedUserTab='parents'></UserTable>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Admins
+        <UserTable selectedUserTab='admins'></UserTable>
       </TabPanel>
     </div>
   );
