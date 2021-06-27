@@ -8,8 +8,10 @@ import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import Collapse from '@material-ui/core/Collapse';
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -23,6 +25,9 @@ const useRowStyles = makeStyles({
       borderBottom: 'unset',
     },
   },
+  margins: {
+    margin-right: '10px',
+  }
 });
 
 function Row(props) {
@@ -48,21 +53,39 @@ function Row(props) {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Grid container spacing={3}>
               <Grid xs item>
-                <div>First Name: <TextField defaultValue={row.firstName}/></div>
-                <div>Last Name: <TextField defaultValue={row.lastName}/></div>
-                <div>Email: <TextField defaultValue={row.email}/></div>
-                <div>Phone: <TextField defaultValue={row.phone}/></div>
-                <div>Timezone: <TextField defaultValue={row.timezone}/></div>
+                <Box display="flex" alignItems="center" >
+                  <div className={classes.margins}>First Name: </div>
+                  <TextField defaultValue={row.firstName} />
+                </Box>
+                <Box display="flex" alignItems="center" >
+                  <div>Last Name: </div>
+                  <TextField defaultValue={row.lastName} />
+                </Box>
+                <Box display="flex" alignItems="center" >
+                  <div>Email: </div>
+                  <TextField defaultValue={row.email} />
+                </Box>
+                <Box display="flex" alignItems="center" >
+                  <div>Phone: </div>
+                  <TextField defaultValue={row.phone} />
+                </Box>
+                <Box display="flex" alignItems="center" >
+                  <div>Timezone: </div>
+                  <TextField defaultValue={row.timezone} />
+                </Box>
               </Grid>
               <Grid xs item>
-                <div>Subjects: <TextField defaultValue={row.subjects}/></div>
-                <div>Experience: <TextField defaultValue={row.experience}/></div>
-                <div>Availability: <TextField defaultValue={row.availability}/></div>
-                <div>Experience: <TextField defaultValue={row.experience}/></div>
-                <div>Bio: <TextField defaultValue={row.bio}/></div>
-                <div>Request Proof of Volunteer Hours?: <TextField defaultValue={row.isAskingProofOfHours}/></div>
+                <div>Subjects: {row.subjects}</div>
+                <div>Experience: {row.experience}</div>
+                <div>Availability: {row.availability}</div>
+                <div>Experience: {row.experience}</div>
+                <div>Bio: {row.bio}</div>
+                <div>Request Proof of Volunteer Hours?: {row.isAskingProofOfHours}</div>
               </Grid>
             </Grid>
+            <Box mb="3" display="flex" flexDirection="row-reverse">
+            <Button variant="contained" color="primary" size="small">Submit</Button>
+            </Box>
           </Collapse>
         </TableCell>
       </TableRow>
