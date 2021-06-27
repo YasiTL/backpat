@@ -2,59 +2,111 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 100%;
 }
 
 .faqs {
   width: 100%;
-  object-fit: contain;
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 0.935rem;
   background-color: #ffffff;
 }
 
+.faq-header {
+  font-size: 100%;
+  /*border: 3px solid green; /*Testing div sizing*/
+  margin: auto;
+  width: 30vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 1rem;
+  height: 5rem;
+  text-align: center;
+}
+
+.faq-header h1 {
+  line-height: 4.6875rem;
+  font-size: 1.875rem;
+  letter-spacing: 0.625rem;
+  opacity: 60%;
+}
+
+.faq-header span {
+  position: relative;
+  width: 1.875rem;
+  height: 0.1875rem;
+  background-color: #e99b68;
+}
+
 .faqs .faq {
-  margin: 15px;
-  padding: 15px;
+  margin: 0.9375rem;
+  padding: 0.9375rem;
   background-color: #ffffff;
 }
 
 .faqs .faq .faq-question {
   position: relative;
-  font-size: 30px;
+  font-size: 1.875rem;
+  cursor: pointer;
+  /*line-height: 3.25rem;*/
   height: 100%;
   background-color: #f9f9fa;
-  padding-left: 80px;
-  color: #0d2130;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 5rem;
+  padding-right: 3.75rem;
+  color: #485763;
 
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .faqs .faq .faq-question:hover,
+  .faq-question:active {
+    background-color: #e99b68;
+    /*opacity: 75%;*/
+  }
 }
 
 .faqs .faq .faq-question::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: 0px;
+  right: 0rem;
   transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
+
+  background-image: url("../assets/chevron-down-solid.svg");
+  color: #485763;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .faqs .faq .faq-answer {
   opacity: 0;
-  font-size: 18px;
-  max-height: 0;
-  object-fit: contain;
-  color: #b8b8b8;
-  overflow-y: hidden;
-  transition: all 0.4s ease;
+  cursor: default;
+  padding-left: 2rem;
+  font-weight: 100%;
+  font-size: 100%;
+  max-height: 0.625rem;
+  /*object-fit: contain;*/
+  color: #8d8d8d;
+  overflow-y: clip;
+  transition: all 0.4s ease-out;
 }
 
 .faqs .faq.open .faq-question {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
+}
+
+.faqs .faq.open .faq-question::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .faqs .faq.open .faq-answer {
-  max-height: 1000px;
+  max-height: 62.5rem;
   opacity: 1;
 }

@@ -16,7 +16,7 @@ function FaqPage() {
     {
       question: "Who is eligible to sign up for tutoring with Backpat?",
       answer:
-        "Absolutely not! Backpat is comprised entirely of volunteers aiming to make a positive contribution to their community and was created specifically so no monetary transactions are necessary at any point.",
+        "We offer free tutoring to any student K-12 who is interested in receiving tutoring in any of the subjects listed on our website. Due to current circumstances with the coronavirus, we will be giving priority to families with active healthcare workers should all our volunteers become fully booked.",
       open: false,
     },
     {
@@ -63,11 +63,11 @@ function FaqPage() {
 
       {/*FAQ Header */}
 
-      <Grid container justify="center">
-        <Grid item alignContent="center">
-          <Box fontSize={20}>FAQ</Box>
-        </Grid>
-      </Grid>
+      <div className="faq-header">
+        <span></span>
+        <h1>FAQ</h1>
+        <span></span>
+      </div>
       <div className="faqs">
         {faqs.map((faq, i) => (
           <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
