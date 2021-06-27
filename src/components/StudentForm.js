@@ -1,6 +1,18 @@
 import React from 'react';
-import { TextField, Button, Box, Select, MenuItem, MenuList, InputLabel} from '@material-ui/core';
+import { TextField, Button, Box, Select, MenuItem, InputLabel, Checkbox, FormControl} from '@material-ui/core';
+import { Autocomplete } from '@material-ui/lab';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
+const subjects = [
+    {class: "Art and Music", value: "A+M"},
+    {class: "English", value: "HUM"},
+    {class: "Foreign Language", value: "LANG"},
+    {class: "History", value: "HIST"},
+    {class: "Computer Science", value: "CS"},
+    {class: "Science", value: "SCI"},
+    {class: "Other", value: "MISC"}
+];
 
 class ChildForm extends React.Component {
     constructor(props) {
@@ -85,88 +97,70 @@ class ChildForm extends React.Component {
                         </Select>
                     </Box>
                     <Box mt={4}>
-                        <InputLabel id="classes">Class(es)</InputLabel>
-                        <Select
-                            required 
-                            fullWidth
+                        <Autocomplete
                             multiple
-                            value={this.state.classes}
-                            onChange={e => this.setState({ classes: [...this.state.classes, e.target.value] })}>
-                            <MenuItem value="A+M">Art and Music</MenuItem>
-                            <MenuItem value="HUM">English</MenuItem>
-                            <MenuItem value="LANG">Foreign Language</MenuItem>
-                            <MenuItem value="HIST">History</MenuItem>
-                            <MenuItem value="CS">Computer Science</MenuItem>
-                            <MenuItem value="MATH">Mathematics</MenuItem>
-                            <MenuItem value="SCI">Science</MenuItem>
-                        </Select>
+                            disableCloseOnSelect
+                            id="classes"
+                            options={subjects}
+                            getOptionLabel={option => option.class}
+                            onChange={(e, v) => this.setState({ classes: v})}
+                            renderOption={(option, { selected }) => (
+                                <React.Fragment>
+                                  <Checkbox
+                                    icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+                                    checkedIcon={<CheckBoxIcon fontSize="small" />}
+                                    checked={selected}
+                                  />
+                                  {option.class}
+                                </React.Fragment>
+                            )}
+                            renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    required
+                                    variant="standard"
+                                    label="Classes"
+                                    placeholder="Select class(es)"
+                                />
+                            )}
+                        />
+                    </Box>      
+                    <Box mt={4}>
+                        <div> My child is available on:</div>
+                        <InputLabel id="day">Day</InputLabel>
+                            <Select
+                                required
+                                autoWidth
+                                labelId="day"                             
+                                >
+                                <MenuItem value="MON">Monday</MenuItem>
+                                <MenuItem value="TUES">Tuesday</MenuItem>
+                                <MenuItem value="WED">Wednesday</MenuItem>
+                                <MenuItem value="THURS">Thursday</MenuItem>
+                                <MenuItem value="FRI">Friday</MenuItem>
+                                <MenuItem value="SAT">Saturday</MenuItem>
+                                <MenuItem value="SUN">Sunday</MenuItem>
+                            </Select>
+                    </Box>
+                    <Box mt={3}>
+                        <TextField
+                            required
+                            fullWidth
+                            name="bio"
+                            type="text"
+                            value={this.state.bio}
+                            label="Bio"
+                            placeholder="Brief bio of student"
+                            onChange={e => this.setState({ bio: e.target.value })}
+                        />
                     </Box>
                 </div>
+                
+                <Box display="flex" mt={5} justifyContent="center">
+                    <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
+                </Box>
             </form>
         )
     }
 }
 export default ChildForm
-
-/*
-                <div>                        
-                    <TextField
-                        required
-                        fullWidth
-                        name="firstName"
-                        type="text"
-                        value={this.state.firstName}
-                        label="First Name"
-                        onChange={e => this.setState({ firstName: e.target.value })}
-                    />
-                    <br /><br /><br />
-                    <TextField
-                        required
-                        fullWidth
-                        name="lastName"
-                        type="text"
-                        value={this.state.lastName}
-                        label="Last Name"
-                        onChange={e => this.setState({ lastName: e.target.value })}
-                    />
-                    <br /><br /><br />
-                    <TextField
-                        required
-                        fullWidth
-                        name="age"
-                        type="text"
-                        value={this.state.age}
-                        label="Age"
-                        onChange={e => this.setState({ age: e.target.value })}
-                    />
-                    <br /><br /><br />
-                    <TextField
-                        required
-                        fullWidth
-                        name="grade"
-                        type="text"
-                        value={this.state.grade}
-                        label="Grade Level"
-                        onChange={e => this.setState({ grade: e.target.value })}
-                    />
-                    <br /><br /><br />
-                    <TextField
-                        required
-                        fullWidth
-                        name="bio"
-                        type="text"
-                        value={this.state.bio}
-                        label="Bio"
-                        onChange={e => this.setState({ bio: e.target.value })}
-                    />
-                    <br /><br /><br />
-                    <p> Please enter the date and time at which your child would be available for tutoring. </p>
-                    <input type="date" name="freedate"></input>
-                    <input type="time" name="freetime"></input>
-                    <br /><br /><br />
-                </div>
-
-                <Box display="flex" mt={5} justifyContent="center">
-                    <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
-                </Box>
- */
