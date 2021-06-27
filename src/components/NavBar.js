@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Button, Grid, Typography, Hidden } from "@material-ui/core";
+import { Button, Grid, Typography, } from "@material-ui/core";
 
 function NavBar() {
   return (

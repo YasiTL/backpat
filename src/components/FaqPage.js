@@ -1,4 +1,3 @@
-import { Box, Grid } from "@material-ui/core";
 import React, { useState } from "react";
 import NavBar from "./NavBar";
 import "./FaqPage.css";
@@ -68,6 +67,8 @@ function FaqPage() {
         <h1>FAQ</h1>
         <span></span>
       </div>
+
+      
       <div className="faqs">
         {faqs.map((faq, i) => (
           <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />

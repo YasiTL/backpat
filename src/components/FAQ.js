@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./FaqPage.css";
 function FAQ({ faq, index, toggleFAQ }) {
   return (

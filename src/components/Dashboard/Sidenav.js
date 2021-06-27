@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Sidenav(props) {
   const [isMobileDrawerOpen, setMobileDrawer] = React.useState(false);
-  const [profileSrc, setProfile] = React.useState()
+  /*const [profileSrc, setProfile] = React.useState()*/
   const classes = useStyles();
 
   const profileGrid = (

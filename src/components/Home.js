@@ -3,8 +3,7 @@ import backpatlogo from "../assets/BackPatLogo.png";
 import teachingimage from "../assets/learningImage.png";
 import professorimage from "../assets/professor.png";
 import videocallimage from "../assets/videoCall.png";
-import { Link } from "react-router-dom";
-import { Box, Button, Grid, Typography, Hidden } from "@material-ui/core";
+import { Box, Grid, Typography, Hidden } from "@material-ui/core";
 import NavBar from "./NavBar";
 
 //TODO: Add spacing between body and nav bar; add background to nav bar to make it more distinguishable; Possibly include social media links;
