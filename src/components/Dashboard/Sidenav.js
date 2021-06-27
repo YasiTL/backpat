@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Hidden, Drawer, Avatar, Grid, Box, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -9,14 +8,15 @@ import {
   Link,
 } from "react-router-dom";
 import SessionLog from '../SessionLog';
-import TutorSpecifics from '../TutorSpecifics'
+import TutorSpecifics from '../TutorSpecifics';
+import ParentProfile from '../ParentProfile'
 
 const drawerWidth = 240;
 const routes = [
   {  //TODO:Implement authorization to ensure client can only access accepted dashboard 
     path: "/profile",
     exact: true,
-    mainContent: () => <h1>add profile component here</h1>,
+    mainContent: () => <ParentProfile/>,
   },
   {
     path: "/dashboard",

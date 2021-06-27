@@ -8,9 +8,6 @@ import { Grid, Box, Typography } from "@material-ui/core"
 function TutorSignUp(){    
     return (
         <div>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
             <Box display="flex" mt={10}>
             <Grid container >
               <Grid item sm/>

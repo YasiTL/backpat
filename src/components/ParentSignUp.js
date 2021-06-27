@@ -6,9 +6,6 @@ import { Grid, Box, Typography } from "@material-ui/core"
 function ParentSignUp() {
     return (
         <div>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
             <Box display="flex" mt={10}>
             <Grid container spacing={3}>
               <Grid item sm />
