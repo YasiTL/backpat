@@ -24,9 +24,17 @@ class ChildForm extends React.Component {
             age: "",
             grade: "",
             classes: [],
-            availability: [],
+            availability: [{day: "", startTime: "", endTime: ""}],
             bio: ""
         };
+    }
+
+    handleAddInput = () => {
+
+    }
+
+    handleRemoveInput = () => {
+
     }
 
     handleSubmit = (event) => {
@@ -136,7 +144,8 @@ class ChildForm extends React.Component {
                                     <Select
                                         required
                                         autoWidth
-                                        labelId="day"                             
+                                        labelId="day"
+                                        value={this.state.availability.day}                           
                                         >
                                         <MenuItem value="MON">Monday</MenuItem>
                                         <MenuItem value="TUES">Tuesday</MenuItem>
@@ -179,14 +188,16 @@ class ChildForm extends React.Component {
                                     variant="contained" 
                                     alignItmes="center" 
                                     color="seconday" 
-                                    style={{maxWidth: '60px', maxHeight: '35px', minWidth: '20px'}}>Add</Button>
+                                    style={{maxWidth: '60px', maxHeight: '35px', minWidth: '20px'}}
+                                    onClick={this.handleAddInput}>Add</Button>
                                 <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; &nbsp;</div>
                                 <Button 
                                     size="small" 
                                     variant="contained" 
                                     alignItmes="center" 
                                     color="seconday"
-                                    style={{maxWidth: '60px', maxHeight: '35px'}}>Remove</Button>
+                                    style={{maxWidth: '60px', maxHeight: '35px'}}
+                                    onClick={this.handleRemoveInput}>Remove</Button>
                             </Grid>
                         </div>
                     </Box>
@@ -202,8 +213,7 @@ class ChildForm extends React.Component {
                             onChange={e => this.setState({ bio: e.target.value })}
                         />
                     </Box>
-                </div>
-                
+                </div>        
                 <Box display="flex" mt={5} justifyContent="center">
                     <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
                 </Box>
