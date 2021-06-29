@@ -24,6 +24,7 @@ class ChildForm extends React.Component {
             age: "",
             grade: "",
             classes: [],
+            misc: "",
             availability: [{day: "", startTime: "12:00", endTime: "12:00"}],
             bio: ""
         };
@@ -137,7 +138,17 @@ class ChildForm extends React.Component {
                                 />
                             )}
                         />
-                    </Box>      
+                    </Box>
+                    <Box mt={4}>
+                        <TextField
+                            fullWidth
+                            name="otherAndLanguages"
+                            type="text"
+                            value={this.state.misc}
+                            label='If "Other" or "Foregin Language" selected, please list the subject(s) or language(s).'
+                            onChange={e => this.setState({ misc: e.target.value })}
+                        />
+                    </Box>    
                     <Box mt={4}>
                         <div> Select day(s) and time availble: </div>
                         <br/>
