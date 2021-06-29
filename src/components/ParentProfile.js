@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Box, Typography, Link, Button } from "@material-ui/core"
+import { Grid, Box, Typography, Link, Button } from "@material-ui/core";
+import CreateIcon from '@material-ui/icons/Create';
 
 function ParentProfile() {
     const styleFont = {
@@ -18,17 +19,11 @@ function ParentProfile() {
             flex: 1,
             flexDirection: "row"
         }
-    }
-
-    /*TO-DO:
-    1. add edit buttons 
-    2. figure out how to change line color
-    3. change fonts
-    */
+    };
 
     return(
         <div>
-            <Box display="flex" mt={5}>
+            <Box display="flex" mt={5} mb={5}>
             <Grid container >
               <Grid item sm/>
               <Grid item xs={10} sm={11}>
@@ -37,22 +32,23 @@ function ParentProfile() {
                 </Box>
                 <Box border={1} mt={4}>
                     <Box mt={4}>
-                        <Box ml={4} mr={4}>
+                        <Box display="flex" ml={4} mr={4}>
                             <p style={styleFont.heading}>Basic Info</p>
-                        </Box>
-                        {/* <Box display="flex" ml={4} mr={4}>
-                            <p style={styleFont.heading}>Basic Info</p>
-                            <Box mr={4}>
+                            <Grid 
+                                container
+                                direction="row"
+                                justify="flex-end"
+                                alignItems="center"
+                            >
                                 <Button
                                     variant="contained"
-                                    color="secondary"
-                                    // startIcon={< />}
-                                    // endIcon={< />}
+                                    style={{background: 'transparent'}}
+                                    startIcon={<CreateIcon />}
                                 >
                                     Edit User
-                                </Button> 
-                            </Box>
-                        </Box> */}
+                                </Button>
+                            </Grid>
+                        </Box>
                         <Box display="flex" ml={4} mr={4} borderBottom={1} color="primary.main">
                             <p style={styleFont.text}>Name</p>
                             <Box ml={8}>
@@ -67,22 +63,23 @@ function ParentProfile() {
                         </Box>
                     </Box>
                     <Box mt={4}>
-                        <Box ml={4} mr={4}>
+                        <Box display="flex" ml={4} mr={4} borderColor="red" border={2}>
                             <p style={styleFont.heading}>Tutoring Info</p>
-                        </Box>
-                        {/* <Box display="flex" ml={4} mr={4}>
-                            <p style={styleFont.heading}>Tutoring Info</p>
-                            <Box mr={4}>
+                            <Grid 
+                                container
+                                direction="row"
+                                justify="flex-end"
+                                alignItems="center"
+                            >
                                 <Button
                                     variant="contained"
-                                    color="secondary"
-                                    // startIcon={< />}
-                                    // endIcon={< />}
+                                    style={{background: 'transparent'}}
+                                    startIcon={<CreateIcon />}
                                 >
                                     Edit User
-                                </Button> 
-                            </Box>
-                        </Box> */}
+                                </Button>
+                            </Grid>
+                        </Box>
                         <Box display="flex" ml={4} mr={4} borderBottom={1} color="primary.main">
                             <p style={styleFont.text}>Email</p>
                             <Box display="flex" ml={9}>
@@ -98,7 +95,7 @@ function ParentProfile() {
                         <Box display="flex" ml={4}>
                             <p style={styleFont.text}>Child(s)</p>
                             <Box display="flex" ml={6}>
-                                <p style={styleFont.link}><Link to={'/'} color="black" onClick={(<p>hello</p>)}>Add a child</Link></p>
+                                <p style={styleFont.link}><Link to={'/'} color="black" onClick={(<p></p>)}>Add a child</Link></p>
                             </Box>
                         </Box>
                     </Box>
