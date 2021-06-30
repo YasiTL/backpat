@@ -73,7 +73,7 @@ class AdminDashboard extends React.Component {
   async loadData() {
     let r = await db.collection("tutors").get();
     firebase.auth().onAuthStateChanged(function(user) {
-      if ((user) && (user.email == "backpattutoring@gmail.com")) {
+      if ((user) && (user.email === "backpattutoring@gmail.com")) {
         
         let data = [];
         r.forEach( doc =>
