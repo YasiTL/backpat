@@ -25,21 +25,25 @@ class ChildForm extends React.Component {
             grade: "",
             classes: [],
             misc: "",
-            availability: [{day: "", startTime: "12:00", endTime: "12:00"}],
+            availability: [{day: "WED", startTime: "12:00", endTime: "12:00"}, {day: "", startTime: "12:00", endTime: "12:00"}],
             bio: ""
         };
     }
 
-    handleAvailability = (e) => {
-
+    handleAvailability = (e, index) => {
+        const list = [...this.state.availability];
+        list[index][e.target.name] = e.target.value;
+        this.setState(list);
     }
 
     handleAddInput = () => {
-
+        this.setState({ availability: [...this.state.availability, {day: "", startTime: "12:00", endTime: "12:00"}] });
     }
 
-    handleRemoveInput = () => {
-
+    handleRemoveInput = (index) => {
+        this.setState({
+            availability: this.state.availability.filter((s, sindex) => index !== sindex)
+        });
     }
 
     handleSubmit = (event) => {
@@ -151,72 +155,81 @@ class ChildForm extends React.Component {
                     </Box>    
                     <Box mt={4}>
                         <div> Select day(s) and time availble: </div>
-                        <br/>
-                        {this.state.availability.map((vals, i) => {
+                        {this.state.availability.map((val, index) => {
                             return(
-                                <div key={i}>
-                                    <Grid container spacing={15}>
-                                        <Grid item xs={1.5}>
-                                            <InputLabel id="day">Day</InputLabel>
-                                            <Select
-                                                required
-                                                autoWidth
-                                                labelId="day"
-                                                value={vals.day}
-                                                onChange={this.handleAvailability}                        
-                                                >
-                                                <MenuItem value="MON">Monday</MenuItem>
-                                                <MenuItem value="TUES">Tuesday</MenuItem>
-                                                <MenuItem value="WED">Wednesday</MenuItem>
-                                                <MenuItem value="THURS">Thursday</MenuItem>
-                                                <MenuItem value="FRI">Friday</MenuItem>
-                                                <MenuItem value="SAT">Saturday</MenuItem>
-                                                <MenuItem value="SUN">Sunday</MenuItem>
-                                            </Select>
+                                <div key={index}>
+                                    <Box mt={3}>
+                                        <Grid container spacing={15}>
+                                            <Grid item xs={1.5}>
+                                                <InputLabel id="day">Day</InputLabel>
+                                                <Select
+                                                    required
+                                                    autoWidth
+                                                    id="day"
+                                                    labelId="day"
+                                                    value={val.day}
+                                                    onChange={e => this.handleAvailability(e, index)}                        
+                                                    >
+                                                    <MenuItem value="MON">Monday</MenuItem>
+                                                    <MenuItem value="TUES">Tuesday</MenuItem>
+                                                    <MenuItem value="WED">Wednesday</MenuItem>
+                                                    <MenuItem value="THURS">Thursday</MenuItem>
+                                                    <MenuItem value="FRI">Friday</MenuItem>
+                                                    <MenuItem value="SAT">Saturday</MenuItem>
+                                                    <MenuItem value="SUN">Sunday</MenuItem>
+                                                </Select>
+                                            </Grid>
+                                            <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; from &nbsp;</div>
+                                            <Grid item xs={1.5}>
+                                                <TextField
+                                                    required
+                                                    id="startTime"
+                                                    label="Start Time"
+                                                    type="time"
+                                                    inputProps={{
+                                                        step: 900, //15 min interval
+                                                    }}
+                                                    value={val.startTime}
+                                                    onChange={e => this.handleAvailability(e, index)}
+                                                />
+                                            </Grid>
+                                            <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; to &nbsp;</div>
+                                            <Grid item xs={1.5}>
+                                                <TextField
+                                                    required
+                                                    id="endTime"
+                                                    label="End Time"
+                                                    type="time"
+                                                    inputProps={{
+                                                        step: 900, //15 min interval
+                                                    }}
+                                                    value={val.endTime}
+                                                    onChange={e => this.handleAvailability(e, index)}
+                                                />
+                                            </Grid>
+                                            <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; &nbsp;</div>
+                                            { index === 0  ?
+                                                <Button 
+                                                size="small" 
+                                                variant="contained" 
+                                                alignItmes="center" 
+                                                color="seconday" 
+                                                style={{maxWidth: '60px', maxHeight: '35px', minWidth: '20px'}}
+                                                onClick={() => {this.handleAddInput()}}>Add</Button>
+                                                : <div></div>
+                                            }
+                                            { index !== 0 ?                                         
+                                                <Button 
+                                                size="small" 
+                                                variant="contained" 
+                                                alignItmes="center" 
+                                                color="seconday"
+                                                style={{maxWidth: '60px', maxHeight: '35px'}}
+                                                onClick={() => this.handleRemoveInput(index)}>Remove</Button>
+                                                : <div></div>
+                                            }
                                         </Grid>
-                                        <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; from &nbsp;</div>
-                                        <Grid item xs={1.5}>
-                                            <TextField
-                                                required
-                                                id="start time"
-                                                label="Start Time"
-                                                type="time"
-                                                inputProps={{
-                                                    step: 900, //15 min interval
-                                                }}
-                                                value={vals.startTime}
-                                            />
-                                        </Grid>
-                                        <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; to &nbsp;</div>
-                                        <Grid item xs={1.5}>
-                                            <TextField
-                                                required
-                                                id="end time"
-                                                label="End Time"
-                                                type="time"
-                                                inputProps={{
-                                                    step: 900, //15 min interval
-                                                }}
-                                                value={vals.endTime}
-                                            />
-                                        </Grid>
-                                        <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; &nbsp;</div>
-                                        <Button 
-                                            size="small" 
-                                            variant="contained" 
-                                            alignItmes="center" 
-                                            color="seconday" 
-                                            style={{maxWidth: '60px', maxHeight: '35px', minWidth: '20px'}}
-                                            onClick={this.handleAddInput}>Add</Button>
-                                        <div style={{position: "relative", top: "10px", wordSpacing: "5px"}}>&nbsp; &nbsp;</div>
-                                        <Button 
-                                            size="small" 
-                                            variant="contained" 
-                                            alignItmes="center" 
-                                            color="seconday"
-                                            style={{maxWidth: '60px', maxHeight: '35px'}}
-                                            onClick={this.handleRemoveInput}>Remove</Button>
-                                    </Grid>
+                                    </Box>
                                 </div>
                             )
                         })}
