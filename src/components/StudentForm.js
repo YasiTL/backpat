@@ -25,15 +25,15 @@ class ChildForm extends React.Component {
             grade: "",
             classes: [],
             misc: "",
-            availability: [{day: "WED", startTime: "12:00", endTime: "12:00"}, {day: "", startTime: "12:00", endTime: "12:00"}],
+            availability: [{day: "", startTime: "12:00", endTime: "12:00"}],
             bio: ""
         };
     }
 
     handleAvailability = (e, index) => {
-        const list = [...this.state.availability];
-        list[index][e.target.name] = e.target.value;
-        this.setState(list);
+       let list = [...this.state.availability];
+       list[index][e.target.name] = e.target.value;
+       this.setState({ availability: list });
     }
 
     handleAddInput = () => {
@@ -121,7 +121,7 @@ class ChildForm extends React.Component {
                             id="classes"
                             options={subjects}
                             getOptionLabel={option => option.class}
-                            onChange={(e, v) => this.setState({ classes: v})}
+                            onChange={(e, v) => this.setState({ classes: v })}
                             renderOption={(option, { selected }) => (
                                 <React.Fragment>
                                   <Checkbox
@@ -146,7 +146,7 @@ class ChildForm extends React.Component {
                     <Box mt={4}>
                         <TextField
                             fullWidth
-                            name="otherAndLanguages"
+                            name="misc"
                             type="text"
                             value={this.state.misc}
                             label='If "Other" or "Foregin Language" selected, please list the subject(s) or language(s).'
@@ -165,10 +165,11 @@ class ChildForm extends React.Component {
                                                 <Select
                                                     required
                                                     autoWidth
+                                                    name="day"
                                                     id="day"
                                                     labelId="day"
                                                     value={val.day}
-                                                    onChange={e => this.handleAvailability(e, index)}                        
+                                                    onChange={e => this.handleAvailability(e, index)} 
                                                     >
                                                     <MenuItem value="MON">Monday</MenuItem>
                                                     <MenuItem value="TUES">Tuesday</MenuItem>
@@ -183,7 +184,7 @@ class ChildForm extends React.Component {
                                             <Grid item xs={1.5}>
                                                 <TextField
                                                     required
-                                                    id="startTime"
+                                                    name="startTime"
                                                     label="Start Time"
                                                     type="time"
                                                     inputProps={{
@@ -197,7 +198,7 @@ class ChildForm extends React.Component {
                                             <Grid item xs={1.5}>
                                                 <TextField
                                                     required
-                                                    id="endTime"
+                                                    name="endTime"
                                                     label="End Time"
                                                     type="time"
                                                     inputProps={{
