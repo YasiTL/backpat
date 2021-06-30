@@ -85,7 +85,7 @@ class ChildForm extends React.Component {
                             fullWidth
                             name="age"
                             type="number"
-                            InputProps= {{ inputProps: { min: 5, max: 18 } }}
+                            InputProps= {{ inputProps: { min: 4, max: 18 } }}
                             value={this.state.age}
                             label="Age"
                             onChange={e => this.setState({ age: e.target.value })}
