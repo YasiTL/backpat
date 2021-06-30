@@ -30,13 +30,7 @@ class ParentForm extends React.Component {
         // Create an account:
         const emailTemp = newParent.email
         const passwordTemp = newParent.password
-        firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp).then(cred => {
-            console.log(cred.user);
-            const modal = document.querySelector('#modal-signup');
-            firebase.auth().M.Modal.getInstance(modal).close();
-            firebase.auth().signupForm.reset();
-        })
-
+        firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp);
         // Create user data collection/document:
         var docRef = db.collection("parents");
         await docRef.doc(newParent.email).set(newParent);
@@ -49,7 +43,6 @@ class ParentForm extends React.Component {
     }
 
     render() {
-        console.log("ParentForm.js")
         return (
             <form onSubmit={this.handleSubmit} id="ParentForm" autoComplete="off">
                 <div>
@@ -106,7 +99,7 @@ class ParentForm extends React.Component {
                         required
                         fullWidth
                         name="password"
-                        type="text"
+                        type="password"
                         value={this.state.university}
                         label="Password"
                         onChange={e => this.setState({ password: e.target.value })}
