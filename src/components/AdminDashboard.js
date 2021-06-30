@@ -15,6 +15,8 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 import { db } from "../services/firebase"
 
+import firebase from 'firebase';
+
 const useRowStyles = makeStyles({
   root: {
     '& > *': {
@@ -70,11 +72,22 @@ class AdminDashboard extends React.Component {
 
   async loadData() {
     let r = await db.collection("tutors").get();
-    let data = [];
-    r.forEach( doc =>
-      data.push(doc.data())
-    );
-    this.setState({ tutor_data: data});
+    firebase.auth().onAuthStateChanged(function(user) {
+      if ((user) && (user.email == "backpattutoring@gmail.com")) {
+        
+        let data = [];
+        r.forEach( doc =>
+          data.push(doc.data())
+        );
+        this.setState({ tutor_data: data });
+               
+        } 
+        else {
+        let r = "Error"
+        console.log(r)
+      }
+    });
+
   }
 
   render() {
