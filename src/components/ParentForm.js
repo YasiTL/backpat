@@ -4,27 +4,22 @@ import InputMask from 'react-input-mask';
 import { db } from "../services/firebase"
 import firebase from 'firebase'
 
-//import Modal from 'components/modal.jsx';
 require('firebase/auth')
-
-//const auth = db.auth();
 
 class ParentForm extends React.Component {
     constructor(props) {
         super(props);
         this.inputRef = React.createRef();
         this.state = {
-            firstName: "John",
-            lastName: "Doe",
-            email: "blank@gmail.com",
-            phone: "1234567890",
-            password: "password",
-            timezone: "CST",
-            bio: "Hello! This is a parent bio."
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            password: "",
+            timezone: "",
+            bio: ""
 
         };
-        //this.handleInputChange = this.handleInputChange.bind(this);
-        //onChange={e => this.setState({ firstName: e.target.value})}
     }
     async pushNewParentForm(newParent) {
         // Create an account:

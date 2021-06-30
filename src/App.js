@@ -14,7 +14,6 @@ import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
 import Login from './components/Login.js';
 import AdminDashboard from './components/AdminDashboard';
-//import OldLogin from './components/oldLogin';
 import Sidenav from './components/Dashboard/Sidenav';
 
 // Global Theme Changes

@@ -12,11 +12,11 @@ class TutorForm extends React.Component {
             lastName: "",
             email: "",
             phone: "",
+            password: "",
             university: "",
             timezone: "",
             bio: ""
         };
-        //this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     async pushNewTutorForm(newTutor) {
@@ -83,6 +83,17 @@ class TutorForm extends React.Component {
                             ref={this.inputRef}
                             type="text" />
                     </InputMask>
+                    </Box>
+                    <Box mb={4}>
+                    <TextField
+                        required
+                        fullWidth
+                        name="password"
+                        type="password"
+                        value={this.state.university}
+                        label="Password"
+                        onChange={e => this.setState({ password: e.target.value })}
+                    />
                     </Box>
                     <Box mb={4}>
                     <TextField
