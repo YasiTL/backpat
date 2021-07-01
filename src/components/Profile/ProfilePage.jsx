@@ -1,9 +1,9 @@
 import React from 'react';
-import Sidenav from '../Dashboard/Sidenav';
 import BasicInfoSection from './BasicInfoSection';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ParentInfoSection from './ParentInfoSection';
+import TutoringInfoSection from './TutoringInfoSection'
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -20,20 +20,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Profile() {
     const classes = useStyles();
-
+    /* const [userIsTutor, setUser] = React.useState(false)*/
+    var userIsTutor = false;
     return (
         <div>
-            <Sidenav
-                mainContent={
-                    <div>
-                        <div><Typography className={classes.title} align='center' variant="h2" component="h3">Profile</Typography></div>
-                        <div className={classes.sectionContainer}>
-                            <div className={classes.mainContent}><BasicInfoSection /></div>
-                            <div className={classes.mainContent}><ParentInfoSection /></div>
-                        </div>
-                    </div>
-                }
-            ></Sidenav>
+            <div>
+                <div><Typography className={classes.title} align='center' variant="h2" component="h3">Profile</Typography></div>
+                <div className={classes.sectionContainer}>
+
+                    <div className={classes.mainContent}><BasicInfoSection /></div>
+                    <div className={classes.mainContent}>{userIsTutor ? <TutoringInfoSection /> : <ParentInfoSection />}</div>
+                </div>
+            </div>
         </div>
     )
 }
