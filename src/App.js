@@ -13,9 +13,7 @@ import Home from './components/Home.js';
 import ParentSignUp from './components/ParentSignUp.js';
 import TutorSignUp from './components/TutorSignUp.js';
 import Login from './components/Login.js';
-import AdminDashboard from './components/AdminDashboard/AdminDashboard.js';
 import AdminLogin from './components/AdminLogin';
-import Sidenav from './components/Dashboard/Sidenav';
 
 // Global Theme Changes
 const theme = createMuiTheme({
@@ -47,12 +45,6 @@ function App() {
             </Route> 
             <Route path ="/tutorsignup">
               <TutorSignUp/>
-            </Route>
-            <Route path ="/dashboard" exact>
-              <Sidenav/>
-            </Route>
-            <Route path="/admindashboard">
-              <AdminDashboard/>
             </Route>
             <Route path="/adminlogin">
               <AdminLogin/>
