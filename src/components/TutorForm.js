@@ -1,20 +1,21 @@
 import React from 'react'
-import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
+import TermsofService from "../assets/backpatTermsOfService.pdf";
+import { TextField, Button, Box, Select, MenuItem, InputLabel, Checkbox } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 import { db } from "../services/firebase"
 
 
 class TutorForm extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            firstName: "John",
-            lastName: "Doe",
-            email: "blank@gmail.com",
-            phone: "1234567890",
-            university: "Illinois Institute of Technology",
-            timezone: "CST",
-            bio: "beep boop"
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            university: "",
+            timezone: "",
+            bio: ""
         };
         //this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -36,16 +37,18 @@ class TutorForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit} id="TutorForm" autoComplete="off">
                 <div>
-                    <TextField
-                        required
-                        fullWidth
-                        name="firstName"
-                        type="text"
-                        value={this.state.firstName}
-                        label="First Name"
-                        onChange={e => this.setState({ firstName: e.target.value })}
-                    />
-                    <br /><br /><br />
+                    <Box mb={4}>
+                        <TextField
+                            required
+                            fullWidth
+                            name="firstName"
+                            type="text"
+                            value={this.state.firstName}
+                            label="First Name"
+                            onChange={e => this.setState({ firstName: e.target.value })}
+                        />
+                    </Box>
+                    <Box mb={4}>
                     <TextField
                         required
                         fullWidth
@@ -55,41 +58,45 @@ class TutorForm extends React.Component {
                         label="Last Name"
                         onChange={e => this.setState({ lastName: e.target.value })}
                     />
-                    <br /><br /><br />
+                    </Box>
+                    <Box mb={4}>
                     <TextField
-                            required
-                            fullWidth
-                            name="email"
-                            type="text"
-                            value={this.state.email}
-                            label="Email"
-                            onChange={e => this.setState({ email: e.target.value })}
-                        />
-                    <br /><br /><br />
+                        required
+                        fullWidth
+                        name="email"
+                        type="text"
+                        value={this.state.email}
+                        label="Email"
+                        onChange={e => this.setState({ email: e.target.value })}
+                    />
+                    </Box>
+                    <Box mb={4}>
                     <InputMask
                         mask="(999)-999-9999"
                         value={this.state.phone}
                         onChange={e => this.setState({ phone: e.target.value })}
-                        >
+                    >
                         <TextField
                             required
                             fullWidth
                             name="phone"
                             label="Phone"
                             ref={this.inputRef}
-                            type="text"/>
+                            type="text" />
                     </InputMask>
-                    <br /><br /><br />
+                    </Box>
+                    <Box mb={4}>
                     <TextField
                         required
                         fullWidth
                         name="university"
                         type="text"
                         value={this.state.university}
-                        label="Unviersity"
+                        label="University"
                         onChange={e => this.setState({ university: e.target.value })}
                     />
-                    <br /><br /><br />
+                    </Box>
+                    <Box mb={4} mt={6}>
                     <InputLabel id="timezone-label">Timezone</InputLabel>
                     <Select
                         required
@@ -104,7 +111,8 @@ class TutorForm extends React.Component {
                         <MenuItem value="AST">Alaska Standard Time</MenuItem>
                         <MenuItem value="HST">Hawaii-Aleutian Standard Time</MenuItem>
                     </Select>
-                    <br /><br /><br />
+                    </Box>
+                    <Box mb={4}>
                     <TextField
                         required
                         fullWidth
@@ -116,6 +124,10 @@ class TutorForm extends React.Component {
                         label="Short Bio"
                         onChange={e => this.setState({ bio: e.target.value })}
                     />
+                    </Box>
+                    <Checkbox
+                        required>
+                    </Checkbox> I agree to the <a href={TermsofService} target="_blank" rel="noopener noreferrer">Terms of Service</a>
                 </div>
                 <Box display="flex" mt={5} justifyContent="center">
                     <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>

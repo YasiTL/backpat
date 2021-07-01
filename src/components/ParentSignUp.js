@@ -11,12 +11,12 @@ function ParentSignUp() {
             </li>
             <Box display="flex" mt={10}>
             <Grid container spacing={3}>
-              <Grid item xs />
-              <Grid item xs={5}>
+              <Grid item sm />
+              <Grid item xs={12} sm={8}>
                 <Box display="flex" justifyContent="center" flexWrap="column">
-                  <Typography variant="h2" text-align="center">Get Tutoring</Typography>
+                  <Typography variant="h2" align="center">Get Tutoring</Typography>
                 </Box>
-                <Box mt={2} textAlign="center">
+                <Box mt={2} ml={3} mr={3} textAlign="center">
                     Being paired up with a tutor is on a first-come, first-serve basis.
                     If there are no tutors available, you will be placed on a waiting list, and we will keep you updated via email.
                     <br/><br/>
@@ -24,10 +24,12 @@ function ParentSignUp() {
                     Completing next steps as outlined in our follow up email will ensure you are promptly paired with a tutor as soon as they become available.
                     <br/><br/>
                     Thank you for your patience!
-                  </Box>
+                </Box>
+                <Box mt={4} ml={3} mr={3}>
                 <ParentForm />
+                </Box>
               </Grid>
-              <Grid item xs />
+              <Grid item sm />
             </Grid>
             </Box>
         </div>
