@@ -137,10 +137,9 @@ class UserTable extends React.Component {
   handleChange(event) {
     //Set inputValue state equal to the user typed value in the inputField
     const textFieldInput = event.target.value
-    this.setState({ inputValue: textFieldInput },
-      () => { console.log(textFieldInput) });
+    this.setState({ inputValue: textFieldInput });
 
-    const filteredFromSearchInput = this.state.userData.filter(user => user.email.includes(textFieldInput));
+    const filteredFromSearchInput = this.state.userData.filter(user => user.email.toLowerCase().includes(textFieldInput.toLowerCase()));
     this.setState({ filteredUserData: filteredFromSearchInput });
   }
 
