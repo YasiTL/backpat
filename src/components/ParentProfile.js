@@ -32,10 +32,9 @@ function ParentProfile() {
                 </Box>
                 <Box border={1} mt={4}>
                     <Box mt={4}>
-                        <Box display="flex" ml={4} mr={4}>
-                            <p style={styleFont.heading}>Basic Info</p>
-                            <Grid 
-                                container
+                        <Box display="flex" justifyContent="space-between" ml={4} mr={4}>
+                            <div style={styleFont.heading}>Basic Info</div>
+                            <Box 
                                 direction="row"
                                 justify="flex-end"
                                 alignItems="center"
@@ -47,7 +46,7 @@ function ParentProfile() {
                                 >
                                     Edit User
                                 </Button>
-                            </Grid>
+                            </Box>
                         </Box>
                         <Box display="flex" ml={4} mr={4} borderBottom={1} color="primary.main">
                             <p style={styleFont.text}>Name</p>
