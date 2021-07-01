@@ -4,7 +4,7 @@
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "60004x60004 300002x300002 200004x200004 16x16",
+      "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
@@ -13,7 +13,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "BackPatLogo.png",
+      "src": "BackPatLo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
