@@ -2,9 +2,6 @@ import React from 'react';
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 import { db } from "../services/firebase"
-import firebase from 'firebase'
-
-require('firebase/auth')
 
 class ParentForm extends React.Component {
     constructor(props) {
@@ -30,6 +27,7 @@ class ParentForm extends React.Component {
         var docRef = db.collection("parents");
         await docRef.doc(newParent.email).set(newParent);
     }
+
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
