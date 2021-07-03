@@ -67,45 +67,45 @@ function MainBody() {
             </Grid>
           </Box>
           <Box mt={4}>
-          <Grid container justify='space-between' alignItems="center">
-            <Grid item sm>
-              <img src={teachingimage} alt='teacher' width={250} height={200} />
+            <Grid container justify='space-between' alignItems="center">
+              <Grid item sm>
+                <img src={teachingimage} alt='teacher' width={250} height={200} />
+              </Grid>
+              <Grid item sm>
+                <Box mt={3} textAlign='center'>
+                  <Typography><b>Free enrichment for K-12</b></Typography>
+                  <Typography>100% free, no-charge virtual tutoring for K-12 students</Typography>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item sm>
-              <Box mt={3} textAlign='center'>
-                <Typography><b>Free enrichment for K-12</b></Typography>
-                <Typography>100% free, no-charge virtual tutoring for K-12 students</Typography>
-              </Box>
-            </Grid>
-          </Grid>
           </Box>
 
           <Box mt={4}>
-          <Grid container justify="space-between" alignItems="center">
-          <Grid item sm>
-              <img src={professorimage} alt='' width={250} height={200} />
+            <Grid container justify="space-between" alignItems="center">
+              <Grid item sm>
+                <img src={professorimage} alt='' width={250} height={200} />
+              </Grid>
+              <Grid item sm>
+                <Box mt={3} textAlign='center'>
+                  <Typography><b>Caring, Engaging tutors</b></Typography>
+                  <Typography>60+ trained tutors around the world from leading colleges dedicated to helping students succeed</Typography>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item sm>
-              <Box mt={3} textAlign='center'>
-                <Typography><b>Caring, Engaging tutors</b></Typography>
-                <Typography>60+ trained tutors around the world from leading colleges dedicated to helping students succeed</Typography>
-              </Box>
-            </Grid>
-          </Grid>
           </Box>
 
           <Box my={4}>
-          <Grid container justify='space-between' alignItems="center">
-            <Grid item sm>
-              <img src={videocallimage} alt='' width={250} height={200} />
+            <Grid container justify='space-between' alignItems="center">
+              <Grid item sm>
+                <img src={videocallimage} alt='' width={250} height={200} />
+              </Grid>
+              <Grid item sm>
+                <Box mt={2} textAlign='center'>
+                  <Typography><b>Receive Help From Anywhere</b></Typography>
+                  <Typography>Virtual tutoring from the comfort of your own designated work space</Typography>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item sm>
-              <Box mt={2} textAlign='center'>
-                <Typography><b>Receive Help From Anywhere</b></Typography>
-                <Typography>Virtual tutoring from the comfort of your own designated work space</Typography>
-              </Box>
-            </Grid>
-          </Grid>
           </Box>
 
         </Grid>
