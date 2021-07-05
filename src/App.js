@@ -13,7 +13,7 @@ import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import AdminLogin from "./components/AdminLogin";
 import Sidenav from "./components/Dashboard/Sidenav";
-import FaqPage from "./components/FaqPage";
+import FaqPage from "./components/FAQ/FaqPage";
 
 
 // Global Theme Changes
