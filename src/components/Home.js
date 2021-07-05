@@ -9,7 +9,6 @@ import {
 import { Box, Button, Grid, Typography } from '@material-ui/core';
 import ParentSignUp from './ParentSignUp'
 import TutorSignUp from './TutorSignUp'
-import Container from '@material-ui/core/Container';
 
 //TODO: Add spacing between body and nav bar; add background to nav bar to make it more distinguishable; Possibly include social media links;
 function Home() {
