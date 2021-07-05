@@ -8,9 +8,9 @@ import {
   Switch,
   Link,
 } from "react-router-dom";
-import SessionLog from '../SessionLog';
+import SessionLog from '../AdminDashboard/SessionLog';
 import TutorSpecifics from '../TutorSpecifics';
-import Profile from '../Profile/ProfilePage.jsx';
+import Profile from '../Profile/ProfilePage';
 import SampleProfile from '../../assets/sampleprofile.jpg'
 
 const drawerWidth = 240;
@@ -18,7 +18,7 @@ const routes = [
   {  //TODO:Implement authorization to ensure client can only access accepted dashboard 
     path: "/profile",
     exact: true,
-    mainContent: () => <Profile/>,
+    mainContent: () => <Profile />,
   },
   {
     path: "/dashboard",
@@ -27,7 +27,7 @@ const routes = [
   },
   {
     path: "/sessionlog",
-    mainContent: () => <SessionLog/>,
+    mainContent: () => <SessionLog />,
   },
   {
     path: "/addchild",
@@ -35,7 +35,7 @@ const routes = [
   },
   {
     path: "/tutorspecifics",
-    mainContent: () => <TutorSpecifics/>,
+    mainContent: () => <TutorSpecifics />,
   },
   {
     path: "/resources",
@@ -75,9 +75,9 @@ function Sidenav(props) {
           <Grid item md={2}>
             <Avatar
               sizes="large"
-              src = {SampleProfile}
+              src={SampleProfile}
               alt="Christian Razo"
-              className={classes.profile} 
+              className={classes.profile}
             >
             </Avatar>
           </Grid>
@@ -107,82 +107,14 @@ function Sidenav(props) {
     </Box>
   );
 
- // This is whats inside of the tutor sidenav
+  // This is whats inside of the tutor sidenav
   const tutorSidenav = (
     <div>
       {profileGrid}
       <hr></hr>
-        <Box mt={4}> {/*10*/}
-          <Grid container direction="column" justify="flex start">
-            <Box alignContent="center" mt={1} mb = {2}>
-              <Grid item>
-                <Button
-                  variant="text"
-                  size="large"
-                  color="primary"
-                  fullWidth={true}
-                  component={Link}
-                  to="/dashboard"
-                >
-                  <Typography>Dashboard</Typography>
-                </Button>
-              </Grid>
-            </Box>
-            <Box alignContent="center" mt={1} mb = {2}>
-              <Grid item>
-                <Button
-                  variant="text"
-                  size="large"
-                  color="primary"
-                  fullWidth={true}
-                  component={Link}
-                  to="/sessionlog"
-                >
-                  <Typography>Session Log</Typography>
-                </Button>
-              </Grid>
-            </Box>
-            <Box alignContent="center" mt={1} mb = {2}>
-              <Grid item>
-                <Button
-                  variant="text"
-                  size="large"
-                  color="primary"
-                  fullWidth={true}
-                  component={Link}
-                  to="/resources"
-                >
-                  <Typography>Resources</Typography>
-                </Button>
-              </Grid>
-            </Box>
-            <Box alignContent="center" mt={1} mb = {2}>
-              <Grid item>
-                <Button
-                  variant="text"
-                  size="large"
-                  color="primary"
-                  fullWidth={true}
-                  component={Link}
-                  to="/tutorspecifics"
-                >
-                  <Typography>Tutor Specifics</Typography>
-                </Button>
-              </Grid>
-            </Box>
-          </Grid>
-        </Box>
-    </div>
-  );
-
-  // This is whats inside of the parent side nav
-  const parentSidenav = (
-    <div>
-      {profileGrid}
-      <hr></hr>
-      <Box mt={10}>
+      <Box mt={4}> {/*10*/}
         <Grid container direction="column" justify="flex start">
-          <Box alignContent="center" mt={1} mb = {2}>
+          <Box alignContent="center" mt={1} mb={2}>
             <Grid item>
               <Button
                 variant="text"
@@ -196,7 +128,7 @@ function Sidenav(props) {
               </Button>
             </Grid>
           </Box>
-          <Box alignContent="center" mt={1} mb = {2}>
+          <Box alignContent="center" mt={1} mb={2}>
             <Grid item>
               <Button
                 variant="text"
@@ -210,7 +142,75 @@ function Sidenav(props) {
               </Button>
             </Grid>
           </Box>
-          <Box alignContent="center" mt={1} mb = {2}>
+          <Box alignContent="center" mt={1} mb={2}>
+            <Grid item>
+              <Button
+                variant="text"
+                size="large"
+                color="primary"
+                fullWidth={true}
+                component={Link}
+                to="/resources"
+              >
+                <Typography>Resources</Typography>
+              </Button>
+            </Grid>
+          </Box>
+          <Box alignContent="center" mt={1} mb={2}>
+            <Grid item>
+              <Button
+                variant="text"
+                size="large"
+                color="primary"
+                fullWidth={true}
+                component={Link}
+                to="/tutorspecifics"
+              >
+                <Typography>Tutor Specifics</Typography>
+              </Button>
+            </Grid>
+          </Box>
+        </Grid>
+      </Box>
+    </div>
+  );
+
+  // This is whats inside of the parent side nav
+  const parentSidenav = (
+    <div>
+      {profileGrid}
+      <hr></hr>
+      <Box mt={10}>
+        <Grid container direction="column" justify="flex start">
+          <Box alignContent="center" mt={1} mb={2}>
+            <Grid item>
+              <Button
+                variant="text"
+                size="large"
+                color="primary"
+                fullWidth={true}
+                component={Link}
+                to="/dashboard"
+              >
+                <Typography>Dashboard</Typography>
+              </Button>
+            </Grid>
+          </Box>
+          <Box alignContent="center" mt={1} mb={2}>
+            <Grid item>
+              <Button
+                variant="text"
+                size="large"
+                color="primary"
+                fullWidth={true}
+                component={Link}
+                to="/sessionlog"
+              >
+                <Typography>Session Log</Typography>
+              </Button>
+            </Grid>
+          </Box>
+          <Box alignContent="center" mt={1} mb={2}>
             <Grid item>
               <Button
                 variant="text"
@@ -233,51 +233,51 @@ function Sidenav(props) {
 
   return (
     <div>
-        <Router>
-      <nav>
-        <Hidden smUp implementation="js">
-          {" "}
-          {/*Mobile view drawer*/}
-          <Drawer
-            variant="temporary"
-            anchor="left"
-            open={isMobileDrawerOpen}
-            onClose={() => setMobileDrawer(!isMobileDrawerOpen)}
-            classes={{ paper: classes.drawer }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {tutorSidenav}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="js">
-          {" "}
-          {/*desktop view drawer*/}
-          <Drawer classes={{ paper: classes.drawer }} variant="permanent" open>
-            {true &&
-              tutorSidenav}
-            {false &&
-              parentSidenav}
-          </Drawer>
-        </Hidden>
-      </nav>
-      <main className={classes.content}>
-             {props.mainContent} 
+      <Router>
+        <nav>
+          <Hidden smUp implementation="js">
+            {" "}
+            {/*Mobile view drawer*/}
+            <Drawer
+              variant="temporary"
+              anchor="left"
+              open={isMobileDrawerOpen}
+              onClose={() => setMobileDrawer(!isMobileDrawerOpen)}
+              classes={{ paper: classes.drawer }}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+            >
+              {tutorSidenav}
+            </Drawer>
+          </Hidden>
+          <Hidden xsDown implementation="js">
+            {" "}
+            {/*desktop view drawer*/}
+            <Drawer classes={{ paper: classes.drawer }} variant="permanent" open>
+              {true &&
+                tutorSidenav}
+              {false &&
+                parentSidenav}
+            </Drawer>
+          </Hidden>
+        </nav>
+        <main className={classes.content}>
+          {props.mainContent}
           <Switch>
             {routes.map((route, index) => (
               <Route
                 key={index}
                 path={route.path}
                 exact={route.exact}
-                children={<route.mainContent/>}
+                children={<route.mainContent />}
               />
             ))}
           </Switch>
-      </main>
+        </main>
       </Router>
     </div>
-    
+
   );
 }
 

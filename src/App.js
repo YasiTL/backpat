@@ -7,11 +7,11 @@ import { ThemeProvider } from "@material-ui/styles";
 
 
 import Home from "./components/Home.js";
-import ParentSignUp from "./components/ParentSignUp.js";
-import TutorSignUp from "./components/TutorSignUp.js";
+import ParentSignUp from "./components/ParentSignUpPage/ParentSignUp.js";
+import TutorSignUp from "./components/TutorSignUpPage/TutorSignUp.js";
 import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
-import AdminLogin from "./components/AdminLogin";
+import AdminLogin from "./components/AdminLogin/AdminLogin";
 import Sidenav from "./components/Dashboard/Sidenav";
 import FaqPage from "./components/Faq/FaqPage";
 
