@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../NavBar";
 import Grid from "@material-ui/core/Grid"
 import "./FaqPage.css";
-import FAQ from "./FAQ.js";
+import FAQ from "./Faq.js";
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
