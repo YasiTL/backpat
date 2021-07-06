@@ -86,7 +86,7 @@ class AdminDashboard extends React.Component {
         let r = "Error"
         console.log(r)
 
-        history.push('/profile')
+        history.push('/login')
 
       }
     });
