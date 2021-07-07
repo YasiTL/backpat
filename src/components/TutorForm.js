@@ -20,6 +20,11 @@ class TutorForm extends React.Component {
     }
 
     async pushNewTutorForm(newTutor) {
+        // Create an account:
+        const emailTemp = newParent.email
+        const passwordTemp = newParent.password
+        firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp);
+        // Create user data collection/document:
         var docRef = db.collection("tutors");
         await docRef.doc(newTutor.email).set(newTutor);
     }
