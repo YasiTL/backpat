@@ -1,6 +1,7 @@
 import React from 'react'
 import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
 import InputMask from 'react-input-mask';
+import firebase from 'firebase';
 import { db } from "../services/firebase"
 
 
@@ -21,8 +22,8 @@ class TutorForm extends React.Component {
 
     async pushNewTutorForm(newTutor) {
         // Create an account:
-        const emailTemp = newParent.email
-        const passwordTemp = newParent.password
+        const emailTemp = newTutor.email
+        const passwordTemp = newTutor.password
         firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp);
         // Create user data collection/document:
         var docRef = db.collection("tutors");
