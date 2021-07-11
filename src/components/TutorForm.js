@@ -92,7 +92,7 @@ class TutorForm extends React.Component {
                         name="university"
                         type="text"
                         value={this.state.university}
-                        label="Unviersity"
+                        label="University"
                         onChange={e => this.setState({ university: e.target.value })}
                     />
                     </Box>

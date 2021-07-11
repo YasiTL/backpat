@@ -1,0 +1,30 @@
+.faqs .faq .faq-question {
+  position: relative;
+  cursor: pointer;
+  background-color: #f9f9fa;
+  color: #485763;
+  transition: all 0.4s ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .faqs .faq .faq-question:hover,
+  .faq-question:active {
+    background-color: #e99b68;
+  }
+}
+
+.faqs .faq .faq-answer {
+  opacity: 0;
+  cursor: default;
+  max-height: 0.625rem;
+  color: #8d8d8d;
+  overflow-y: clip;
+  transition: all 0.4s ease-out;
+}
+
+
+.faqs .faq.open .faq-answer {
+  max-height: 62.5rem;
+  opacity: 1;
+}
