@@ -62,10 +62,9 @@ function ParentProfile() {
                         </Box>
                     </Box>
                     <Box mt={4}>
-                        <Box display="flex" ml={4} mr={4} borderColor="red" border={2}>
-                            <p style={styleFont.heading}>Tutoring Info</p>
+                        <Box display="flex" justifyContent="space-between" ml={4} mr={4}>
+                            <div style={styleFont.heading}>Tutoring Info</div>
                             <Grid 
-                                container
                                 direction="row"
                                 justify="flex-end"
                                 alignItems="center"

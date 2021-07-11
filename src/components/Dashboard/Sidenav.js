@@ -95,7 +95,7 @@ function Sidenav(props) {
               color="primary"
               fullWidth={true}
               component={Link}
-              to="/Profile"
+              to="/profile"
             >
               View Profile
             </Button>
