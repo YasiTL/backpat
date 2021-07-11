@@ -1,36 +1,33 @@
-import React from 'react';
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom"
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 
-import Home from './components/Home.js';
-import ParentSignUp from './components/ParentSignUp.js';
-import TutorSignUp from './components/TutorSignUp.js';
-import Login from './components/Login.js';
-import AdminDashboard from './components/AdminDashboard';
-import Sidenav from './components/Dashboard/Sidenav';
+
+import Home from "./components/Home.js";
+import ParentSignUp from "./components/ParentSignUp.js";
+import TutorSignUp from "./components/TutorSignUp.js";
+import Login from "./components/Login.js";
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
+import Sidenav from "./components/Dashboard/Sidenav";
+import FaqPage from "./components/FaqPage";
 
 // Global Theme Changes
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#EF6C00'
+      main: "#EF6C00",
     },
     secondary: {
-      main: '#333333'
+      main: "#333333",
     },
   },
   typography: {
-    fontFamily: 'Lato, sans-serif',
-  }
-    
-})
+    fontFamily: "Lato, sans-serif",
+  },
+});
 
 function App() {
   return (
@@ -39,22 +36,26 @@ function App() {
         <Router>
           <Switch>
             <Route path="/parentsignup">
-              <ParentSignUp/>
+              <ParentSignUp />
             </Route>
-            <Route path="/login">
-              <Login/>
-            </Route> 
-            <Route path ="/tutorsignup">
-              <TutorSignUp/>
+            <Route path="/tutorsignup">
+              <TutorSignUp />
             </Route>
-            <Route path ="/dashboard" exact>
-              <Sidenav/>
+            <Route path="/dashboard" exact>
+              <Sidenav />
             </Route>
             <Route path="/admindashboard">
-              <AdminDashboard/>
+              <AdminDashboard />
+            </Route>
+
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/" exact>
-              <Home/>
+              <Home />
+            </Route>
+            <Route path="/faq" exact>
+              <FaqPage />
             </Route>
           </Switch>
         </Router>

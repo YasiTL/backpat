@@ -1,5 +1,6 @@
 import React from 'react'
-import { TextField, Button, Box, Select, MenuItem, InputLabel } from '@material-ui/core';
+import TermsofService from "../assets/backpatTermsOfService.pdf";
+import { TextField, Button, Box, Select, MenuItem, InputLabel, Checkbox } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 import firebase from 'firebase';
 import { db } from "../services/firebase"
@@ -108,7 +109,7 @@ class TutorForm extends React.Component {
                         name="university"
                         type="text"
                         value={this.state.university}
-                        label="Unviersity"
+                        label="University"
                         onChange={e => this.setState({ university: e.target.value })}
                     />
                     </Box>
@@ -141,6 +142,9 @@ class TutorForm extends React.Component {
                         onChange={e => this.setState({ bio: e.target.value })}
                     />
                     </Box>
+                    <Checkbox
+                        required>
+                    </Checkbox> I agree to the <a href={TermsofService} target="_blank" rel="noopener noreferrer">Terms of Service</a>
                 </div>
                 <Box display="flex" mt={5} justifyContent="center">
                     <Button variant="contained" alignItems="center" color="primary" type="submit">Submit</Button>
