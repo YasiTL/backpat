@@ -25,7 +25,7 @@ class ChildForm extends React.Component {
             grade: "",
             classes: [],
             misc: "",
-            availability: [{day: "", startTime: "12:00", endTime: "12:00"}],
+            availability: [{day: "", startTime: "", endTime: ""}],
             bio: ""
         };
     }
@@ -187,6 +187,9 @@ class ChildForm extends React.Component {
                                                     name="startTime"
                                                     label="Start Time"
                                                     type="time"
+                                                    InputLabelProps={{
+                                                        shrink: true,
+                                                      }}
                                                     inputProps={{
                                                         step: 900, //15 min interval
                                                     }}
@@ -201,6 +204,9 @@ class ChildForm extends React.Component {
                                                     name="endTime"
                                                     label="End Time"
                                                     type="time"
+                                                    InputLabelProps={{
+                                                        shrink: true,
+                                                      }}
                                                     inputProps={{
                                                         step: 900, //15 min interval
                                                     }}
