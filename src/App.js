@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
-
 import Home from "./components/Home.js";
 import ParentSignUp from "./components/ParentSignUp.js";
 import TutorSignUp from "./components/TutorSignUp.js";
@@ -14,7 +13,6 @@ import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import AdminLogin from "./components/AdminLogin";
 import Sidenav from "./components/Dashboard/Sidenav";
 import FaqPage from "./components/FaqPage";
-
 
 // Global Theme Changes
 const theme = createMuiTheme({
