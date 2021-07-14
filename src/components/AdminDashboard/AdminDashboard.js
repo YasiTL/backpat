@@ -130,6 +130,7 @@ export default function SimpleTabs() {
   );
 }
 
+/*
 // Load admin dashboard data if logged into admin email
 class AdminDashboard extends React.Component {
   constructor(props) {
@@ -191,3 +192,4 @@ class AdminDashboard extends React.Component {
     )
   }
 }
+ */

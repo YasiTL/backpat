@@ -31,78 +31,78 @@ function Row(props) {
   const classes = useRowStyles();
   if (userType === "parents") {
     return (
-    <React.Fragment>
-      <TableRow className={classes.root}>
-        <TableCell>
-          <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
-            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </IconButton>
-        </TableCell>
-        <TableCell>{row.email}</TableCell>
-        <TableCell>{row.firstName}</TableCell>
-        <TableCell>{row.lastName}</TableCell>
-        <TableCell>{row.timezone}</TableCell>
-      </TableRow>
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Grid container spacing={3}>
-              <Grid xs item>
-                <div><b>Child Name:</b> {row.firstName} {row.lastName}</div>
-                <div><b>Parent Name:</b> </div>
-                <div><b>Email:</b> {row.email}</div>
-                <div><b>Timezone:</b> {row.timezone}</div>
+      <React.Fragment>
+        <TableRow className={classes.root}>
+          <TableCell>
+            <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+              {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+            </IconButton>
+          </TableCell>
+          <TableCell>{row.email}</TableCell>
+          <TableCell>{row.firstName}</TableCell>
+          <TableCell>{row.lastName}</TableCell>
+          <TableCell>{row.timezone}</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Grid container spacing={3}>
+                <Grid xs item>
+                  <div><b>Child Name:</b> {row.firstName} {row.lastName}</div>
+                  <div><b>Parent Name:</b> </div>
+                  <div><b>Email:</b> {row.email}</div>
+                  <div><b>Timezone:</b> {row.timezone}</div>
+                </Grid>
+                <Grid xs item>
+                  <div><b>Subjects:</b> {row.subjects}</div>
+                  <div><b>Grade Level:</b> {row.gradeLevel}</div>
+                  <div><b>Availability:</b> {row.availability}</div>
+                  <div><b>Bio:</b> {row.bio}</div>
+                </Grid>
               </Grid>
-              <Grid xs item>
-                <div><b>Subjects:</b> {row.subjects}</div>
-                <div><b>Grade Level:</b> {row.gradeLevel}</div>
-                <div><b>Availability:</b> {row.availability}</div>
-                <div><b>Bio:</b> {row.bio}</div>
-              </Grid>
-            </Grid>
-          </Collapse>
-        </TableCell>
-      </TableRow>
-    </React.Fragment>
+            </Collapse>
+          </TableCell>
+        </TableRow>
+      </React.Fragment>
     );
   } else if (userType === "tutors") {
     return (
-    <React.Fragment>
-      <TableRow className={classes.root}>
-        <TableCell>
-          <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
-            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </IconButton>
-        </TableCell>
-        <TableCell>{row.email}</TableCell>
-        <TableCell>{row.firstName}</TableCell>
-        <TableCell>{row.lastName}</TableCell>
-        <TableCell>{row.timezone}</TableCell>
-      </TableRow>
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Grid container spacing={3}>
-              <Grid xs item>
-                <div><b>First Name:</b> {row.firstName}</div>
-                <div><b>Last Name:</b> {row.lastName}</div>
-                <div><b>Email:</b> {row.email}</div>
-                <div><b>Phone:</b> {row.phone}</div>
-                <div><b>Timezone:</b> {row.timezone}</div>
+      <React.Fragment>
+        <TableRow className={classes.root}>
+          <TableCell>
+            <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+              {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+            </IconButton>
+          </TableCell>
+          <TableCell>{row.email}</TableCell>
+          <TableCell>{row.firstName}</TableCell>
+          <TableCell>{row.lastName}</TableCell>
+          <TableCell>{row.timezone}</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Grid container spacing={3}>
+                <Grid xs item>
+                  <div><b>First Name:</b> {row.firstName}</div>
+                  <div><b>Last Name:</b> {row.lastName}</div>
+                  <div><b>Email:</b> {row.email}</div>
+                  <div><b>Phone:</b> {row.phone}</div>
+                  <div><b>Timezone:</b> {row.timezone}</div>
+                </Grid>
+                <Grid xs item>
+                  <div><b>Subjects:</b> {row.subjects}</div>
+                  <div><b>Experience:</b> {row.experience}</div>
+                  <div><b>Availability:</b> {row.availability}</div>
+                  <div><b>Experience:</b> {row.experience}</div>
+                  <div><b>Bio:</b> {row.bio}</div>
+                  <div><b>Request Proof of Volunteer Hours?:</b> {row.isAskingProofOfHours}</div>
+                </Grid>
               </Grid>
-              <Grid xs item>
-                <div><b>Subjects:</b> {row.subjects}</div>
-                <div><b>Experience:</b> {row.experience}</div>
-                <div><b>Availability:</b> {row.availability}</div>
-                <div><b>Experience:</b> {row.experience}</div>
-                <div><b>Bio:</b> {row.bio}</div>
-                <div><b>Request Proof of Volunteer Hours?:</b> {row.isAskingProofOfHours}</div>
-              </Grid>
-            </Grid>
-          </Collapse>
-        </TableCell>
-      </TableRow>
-    </React.Fragment>
+            </Collapse>
+          </TableCell>
+        </TableRow>
+      </React.Fragment>
     );
   }
 }
@@ -124,14 +124,26 @@ class UserTable extends React.Component {
   }
 
   async loadData() {
-    // Based on what tab is selected on AdminDashboard.js, load up the correct collection
-    const users = await db.collection(this.props.selectedUserTab).get();
-    let data = [];
-    users.forEach(doc =>
-      data.push(doc.data())
-    );
-    this.setState({ userData: data });
-    this.setState({ filteredUserData: data });
+    let r = await db.collection("tutors").get();
+    firebase.auth().onAuthStateChanged(function (user) {
+      if ((user) && (user.email === "backpattutoring@gmail.com")) {
+
+        let data = [];
+        r.forEach(doc =>
+          data.push(doc.data())
+        );
+        this.setState({ tutor_data: data });
+
+      }
+      else {
+        let r = "Error"
+        console.log(r)
+
+        window.history.push('/login')
+
+      }
+    });
+
   }
 
   handleChange(event) {
