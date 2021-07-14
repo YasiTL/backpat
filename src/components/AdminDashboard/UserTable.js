@@ -15,6 +15,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 import { db } from "../../services/firebase"
+import firebase from 'firebase';
 
 //Apply the CSS for all element types for all current parent's direct children
 const useRowStyles = makeStyles({
