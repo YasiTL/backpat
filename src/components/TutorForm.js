@@ -2,6 +2,7 @@ import React from 'react'
 import TermsofService from "../assets/backpatTermsOfService.pdf";
 import { TextField, Button, Box, Select, MenuItem, InputLabel, Checkbox } from '@material-ui/core';
 import InputMask from 'react-input-mask';
+import firebase from 'firebase';
 import { db } from "../services/firebase"
 
 
@@ -13,14 +14,19 @@ class TutorForm extends React.Component {
             lastName: "",
             email: "",
             phone: "",
+            password: "",
             university: "",
             timezone: "",
             bio: ""
         };
-        //this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     async pushNewTutorForm(newTutor) {
+        // Create an account:
+        const emailTemp = newTutor.email
+        const passwordTemp = newTutor.password
+        firebase.auth().createUserWithEmailAndPassword(emailTemp,passwordTemp);
+        // Create user data collection/document:
         var docRef = db.collection("tutors");
         await docRef.doc(newTutor.email).set(newTutor);
     }
@@ -89,10 +95,21 @@ class TutorForm extends React.Component {
                     <TextField
                         required
                         fullWidth
+                        name="password"
+                        type="password"
+                        value={this.state.university}
+                        label="Password"
+                        onChange={e => this.setState({ password: e.target.value })}
+                    />
+                    </Box>
+                    <Box mb={4}>
+                    <TextField
+                        required
+                        fullWidth
                         name="university"
                         type="text"
                         value={this.state.university}
-                        label="Unviersity"
+                        label="University"
                         onChange={e => this.setState({ university: e.target.value })}
                     />
                     </Box>
