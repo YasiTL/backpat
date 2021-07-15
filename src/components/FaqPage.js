@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar";
 import Grid from "@material-ui/core/Grid";
 import "./FaqPage.css";
 import FAQ from "./FAQ.js";
