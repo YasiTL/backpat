@@ -72,7 +72,7 @@ class ParentForm extends React.Component {
                         value={this.state.email}
                         label="Email"
                         onChange={e => this.setState({ email: e.target.value })}
-                        error={this.state.phone != "" && !this.state.email.includes("@")}
+                        error={this.state.phone !== "" && !this.state.email.includes("@")}
                         helperText="Must enter a valid email address."
                     />
                     </Box>
@@ -89,7 +89,7 @@ class ParentForm extends React.Component {
                             label="Phone"
                             ref={this.inputRef}
                             type="text"
-                            error={this.state.phone != "" && this.state.phone.includes("_")}
+                            error={this.state.phone !== "" && this.state.phone.includes("_")}
                             helperText="Must enter a valid phone number."
                             />
                     </InputMask>
