@@ -9,6 +9,7 @@ import {
 import { Box, Button, Grid, Typography } from '@material-ui/core';
 import ParentSignUp from './ParentSignUp'
 import TutorSignUp from './TutorSignUp'
+import FaqPage from './FaqPage'
 
 //TODO: Add spacing between body and nav bar; add background to nav bar to make it more distinguishable; Possibly include social media links;
 function Home() {
@@ -28,7 +29,7 @@ function Home() {
                 <Button variant="text" color="secondary" size="large" component={Link} to="/tutorsignup"><Typography>Become a Tutor</Typography></Button>
               </Grid>
               <Grid item xs={2}>
-                <Button variant="text" color="secondary" size="large"><Typography>FAQ</Typography></Button>
+                <Button variant="text" color="secondary" size="large" component={Link} to="/faq"><Typography>FAQ</Typography></Button>
               </Grid>
             </Grid>
           </center>
@@ -37,6 +38,7 @@ function Home() {
           <Route exact path='/' component={MainBody} />
           <Route path='/parentsignup' component={ParentSignUp} />
           <Route path='/tutorsignup' component={TutorSignUp} />
+          <Route path='/faq' component={FaqPage}></Route>
         </Switch>
       </div>
     </Router>
