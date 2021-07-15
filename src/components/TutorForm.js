@@ -74,6 +74,8 @@ class TutorForm extends React.Component {
                         value={this.state.email}
                         label="Email"
                         onChange={e => this.setState({ email: e.target.value })}
+                        error={this.state.phone != "" && !this.state.email.includes("@")}
+                        helperText="Must enter a valid email address."
                     />
                     </Box>
                     <Box mb={4}>
@@ -88,16 +90,20 @@ class TutorForm extends React.Component {
                             name="phone"
                             label="Phone"
                             ref={this.inputRef}
-                            type="text" />
+                            type="text" 
+                            error={this.state.phone != "" && this.state.phone.includes("_")}
+                            helperText="Must enter a valid phone number."
+                            />
                     </InputMask>
                     </Box>
+                    
                     <Box mb={4}>
                     <TextField
                         required
                         fullWidth
                         name="password"
                         type="password"
-                        value={this.state.university}
+                        value={this.state.password}
                         label="Password"
                         onChange={e => this.setState({ password: e.target.value })}
                     />
