@@ -25,7 +25,9 @@ function NavBar() {
               size="large"
               component={Link}
               to="/"
-              style={{ opacity: "90%", letterSpacing: "0.15em" }}
+              style={{
+                opacity: "90%", letterSpacing: "0.15em", height: "40px"
+              }}
             >
               <p>
                 <b>Back</b>pat Tutoring
