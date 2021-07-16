@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Link } from "react-router-dom"
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -13,11 +12,13 @@ function Footer() {
                 <center>
                     <Box bgcolor="#EF6C00">
                         <Container>
-                            <Grid item xs={12} sm={4}>
-                                <Box><br /></Box>
-                                <Box color="black" component={Link} to="https://www.linkedin.com/company/backpat-tutoring/"><LinkedInIcon></LinkedInIcon></Box>
-                                <Box color="black" component={Link} to="https://www.facebook.com/backpattutoring/"><FacebookIcon></FacebookIcon></Box>
-                                <Box color="black" component={Link} to="https://www.instagram.com/backpattutoring/"><InstagramIcon></InstagramIcon></Box>
+                            <Grid item xs={12} sm={4} container direction="row" style={{ paddingTop: "2%", paddingLeft: "13.5%" }}>
+                                <br />
+                                <a href="https://www.linkedin.com/company/backpat-tutoring/"><Box color="black"><LinkedInIcon></LinkedInIcon></Box></a>
+                                <a href="https://www.facebook.com/backpattutoring/"><Box color="black"><FacebookIcon></FacebookIcon></Box></a>
+                                <a href="https://www.instagram.com/backpattutoring/"><Box color="black"><InstagramIcon></InstagramIcon></Box></a>
+                            </Grid>
+                            <Grid>
                                 <Box>
                                     <Typography>Designed and devloped by Backpat.</Typography>
                                     <Typography>All rights reserved. &copy;</Typography>

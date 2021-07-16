@@ -43,6 +43,11 @@ function Home() {
           <Route path='/tutorsignup' component={TutorSignUp} />
         </Switch>
         <Footer />
+        <Switch>
+          <Route path='https://www.linkedin.com/company/backpat-tutoring/' component={() => window.location = 'https://www.linkedin.com/company/backpat-tutoring/'}></Route>
+          <Route path='https://www.facebook.com/backpattutoring/' component={() => window.location = 'https://www.facebook.com/backpattutoring/'}></Route>
+          <Route path='https://www.instagram.com/backpattutoring/' component={() => window.location = 'https://www.instagram.com/backpattutoring/'}></Route>
+        </Switch>
       </div>
     </Router>
   );
