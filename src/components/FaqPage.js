@@ -61,6 +61,7 @@ function FaqPage() {
       <Grid container>
         <Grid item xs></Grid>
         <Grid item xs={9}>
+          <div className="container" style={{ height: '50px' }}></div>
           <Box display="flex" justifyContent="center">
             <Typography variant="h4" color="primary" fontWeight="bold">
               -
@@ -77,6 +78,7 @@ function FaqPage() {
               <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
             ))}
           </div>
+          <div className="container" style={{ height: '50px' }}></div>
         </Grid>
         <Grid item xs></Grid>
       </Grid>
