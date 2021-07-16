@@ -6,7 +6,7 @@ function ParentSignUp() {
   return (
     <div>
       <Box display="flex" mt={10}>
-        <Grid container spacing={3}>
+        <Grid container>
           <Grid item sm />
           <Grid item xs={12} sm={8}>
             <Box display="flex" justifyContent="center" flexWrap="column">
@@ -31,6 +31,7 @@ function ParentSignUp() {
             <Box mt={4} ml={3} mr={3}>
               <ParentForm />
             </Box>
+            <div className="container" style={{ height: '50px' }}></div>
           </Grid>
           <Grid item sm />
         </Grid>
