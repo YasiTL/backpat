@@ -1,8 +1,4 @@
 import React from 'react';
-import backpatlogo from "../assets/BackPatLogo.png"
-import teachingimage from '../assets/learningImage.png'
-import professorimage from '../assets/professor.png'
-import videocallimage from '../assets/videoCall.png'
 import {
     BrowserRouter as Router, Switch, Route, Link,
 } from "react-router-dom"
