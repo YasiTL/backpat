@@ -6,7 +6,7 @@ import videocallimage from '../assets/videoCall.png'
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from "react-router-dom"
-import { Box, Button, Container, Grid, Typography } from '@material-ui/core';
+import { Box, Button, Grid, Typography } from '@material-ui/core';
 
 
 import ParentSignUp from './ParentSignUp'

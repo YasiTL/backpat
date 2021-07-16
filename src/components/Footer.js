@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-    BrowserRouter as Router, Switch, Route, Link,
-} from "react-router-dom"
-import { Box, Button, Container, Grid, Typography } from '@material-ui/core';
+import { BrowserRouter as Link } from "react-router-dom"
+import { Box, Container, Grid, Typography } from '@material-ui/core';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
