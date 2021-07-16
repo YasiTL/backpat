@@ -50,8 +50,8 @@ class ParentForm extends React.Component {
                             value={this.state.firstName}
                             label="First Name"
                             onChange={e => this.setState({ firstName: e.target.value })}
-                            error={this.state.firstName !== "" && this.state.firstName.match(/[^\\p{P}|^\\d+]+/)}
-                            helperText={(this.state.firstName !== "" && this.state.firstName.match(/[^\\p{P}|^\\d+]+/)) ? "Enter your first name." : ""}
+                            error={this.state.firstName !== "" && !this.state.firstName.match(/^[a-zA-Z]+$/)}
+                            helperText={(this.state.firstName !== "" && !this.state.firstName.match(/^[a-zA-Z]+$/)) ? "Enter your first name." : ""}
                         />
                     </Box>
                     <Box mb={4}>
@@ -63,8 +63,8 @@ class ParentForm extends React.Component {
                         value={this.state.lastName}
                         label="Last Name"
                         onChange={e => this.setState({ lastName: e.target.value })}
-                        error={this.state.lastName !== "" && this.state.lastName.match(/[^\\p{P}|^\\d+]+/)}
-                        helperText={(this.state.lastName !== "" && this.state.lastName.match(/[^\\p{P}|^\\d+]+/)) ? "Enter your last name." : ""}
+                        error={this.state.lastName !== "" && this.state.lastName.match(/^[a-zA-Z]+$/)}
+                        helperText={(this.state.lastName !== "" && this.state.lastName.match(/^[a-zA-Z]+$/)) ? "Enter your last name." : ""}
                     />
                     </Box>
                     <Box mb={4}>
