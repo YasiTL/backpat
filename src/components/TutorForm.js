@@ -52,6 +52,8 @@ class TutorForm extends React.Component {
                             value={this.state.firstName}
                             label="First Name"
                             onChange={e => this.setState({ firstName: e.target.value })}
+                            error={this.state.firstName !== "" && this.state.firstName.match(/[^\\p{P}|^\\d+]+/)}
+                            helperText={(this.state.firstName !== "" && this.state.firstName.match(/[^\\p{P}|^\\d+]+/)) ? "Enter your first name." : ""}
                         />
                     </Box>
                     <Box mb={4}>
@@ -63,6 +65,8 @@ class TutorForm extends React.Component {
                         value={this.state.lastName}
                         label="Last Name"
                         onChange={e => this.setState({ lastName: e.target.value })}
+                        error={this.state.lastName !== "" && this.state.lastName.match(/[^\\p{P}|^\\d+]+/)}
+                        helperText={(this.state.lastName !== "" && this.state.lastName.match(/[^\\p{P}|^\\d+]+/)) ? "Enter your last name." : ""}
                     />
                     </Box>
                     <Box mb={4}>
@@ -70,12 +74,12 @@ class TutorForm extends React.Component {
                         required
                         fullWidth
                         name="email"
-                        type="text"
+                        type="email"
                         value={this.state.email}
                         label="Email"
                         onChange={e => this.setState({ email: e.target.value })}
-                        error={this.state.phone !== "" && !this.state.email.includes("@")}
-                        helperText="Must enter a valid email address."
+                        error={this.state.email !== "" && !this.state.email.match(/^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i)}
+                        helperText={(this.state.email !== "" && !this.state.email.match(/^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i)) ? "Must enter a valid email address." : ""}
                     />
                     </Box>
                     <Box mb={4}>
@@ -92,7 +96,7 @@ class TutorForm extends React.Component {
                             ref={this.inputRef}
                             type="text" 
                             error={this.state.phone !== "" && this.state.phone.includes("_")}
-                            helperText="Must enter a valid phone number."
+                            helperText={(this.state.phone !== "" && this.state.phone.includes("_")) ? "Must enter a valid phone number." : ""}
                             />
                     </InputMask>
                     </Box>
