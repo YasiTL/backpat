@@ -5,7 +5,6 @@ import professorimage from "../assets/professor.png";
 import videocallimage from "../assets/videoCall.png";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Box, Grid, Typography } from "@material-ui/core";
-import NavBar from "./NavBar";
 import ParentSignUp from "./ParentSignUp";
 import TutorSignUp from "./TutorSignUp";
 import Login from "./Login";
@@ -16,11 +15,6 @@ function Home() {
   return (
     <Router>
       <div>
-        <nav>
-          {" "}
-          {/* Nav Bar*/}
-          <NavBar></NavBar>
-        </nav>
         <Switch>
           <Route exact path="/" component={MainBody} />
           <Route path="/parentsignup" component={ParentSignUp} />
