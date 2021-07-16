@@ -150,6 +150,8 @@ class TutorForm extends React.Component {
                         value={this.state.bio}
                         label="Short Bio"
                         onChange={e => this.setState({ bio: e.target.value })}
+                        error={this.state.bio !== "" && !this.state.bio.replace(/\s/g, "").length}
+                        helperText={(this.state.bio !== "" && !this.state.bio.replace(/\s/g, "").length) ? "Tell us about yourself!" : "" }
                     />
                     </Box>
                     <Checkbox
