@@ -117,9 +117,6 @@ class TutorForm extends React.Component {
                             helperText={(this.state.password !== "" && !this.state.password.match(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/)) ? "Minimum eight characters including one number and one special character" : ""}
                         />
                     </Box>
-                    <div>
-                        {JSON.stringify(this.state.password)}
-                    </div>
                     <Box mb={4}>
                         <TextField
                             required
