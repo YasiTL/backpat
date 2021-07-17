@@ -126,8 +126,8 @@ class TutorForm extends React.Component {
                             value={this.state.university}
                             label="University"
                             onChange={e => this.setState({ university: e.target.value })}
-                            error={this.state.university !== "" && !this.state.university.match(/^[a-zA-Z]+$/)}
-                            helperText={(this.state.university !== "" && !this.state.university.match(/^[a-zA-Z]+$/)) ? "Enter your university." : ""}
+                            error={this.state.university !== "" && !this.state.university.replace(/\s/g, "").length}
+                            helperText={(this.state.university !== "" && !this.state.university.replace(/\s/g, "").length) ? "Enter your university." : ""}
                         />
                     </Box>
                     <Box mb={4} mt={6}>
