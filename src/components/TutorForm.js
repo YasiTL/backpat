@@ -113,8 +113,13 @@ class TutorForm extends React.Component {
                             value={this.state.password}
                             label="Password"
                             onChange={e => this.setState({ password: e.target.value })}
+                            error={this.state.password !== "" && !this.state.password.match(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/)}
+                            helperText={(this.state.password !== "" && !this.state.password.match(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/)) ? "Minimum eight characters including one number and one special character" : ""}
                         />
                     </Box>
+                    <div>
+                        {JSON.stringify(this.state.password)}
+                    </div>
                     <Box mb={4}>
                         <TextField
                             required
@@ -124,6 +129,8 @@ class TutorForm extends React.Component {
                             value={this.state.university}
                             label="University"
                             onChange={e => this.setState({ university: e.target.value })}
+                            error={this.state.university !== "" && !this.state.university.match(/^[a-zA-Z]+$/)}
+                            helperText={(this.state.university !== "" && !this.state.university.match(/^[a-zA-Z]+$/)) ? "Enter your university." : ""}
                         />
                     </Box>
                     <Box mb={4} mt={6}>

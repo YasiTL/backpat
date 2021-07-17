@@ -109,6 +109,8 @@ class ParentForm extends React.Component {
                             value={this.state.password}
                             label="Password"
                             onChange={e => this.setState({ password: e.target.value })}
+                            error={this.state.password !== "" && !this.state.password.match(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/)}
+                            helperText={(this.state.password !== "" && !this.state.password.match(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/)) ? "Minimum eight characters including one number and one special character" : ""}
                         />
                     </Box>
                     <Box mb={4} mt={6}>
