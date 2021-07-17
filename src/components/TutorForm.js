@@ -68,8 +68,8 @@ class TutorForm extends React.Component {
                             value={this.state.lastName}
                             label="Last Name"
                             onChange={e => this.setState({ lastName: e.target.value })}
-                            error={this.state.lastName !== "" && this.state.lastName.match(/^[a-zA-Z]+$/)}
-                            helperText={(this.state.lastName !== "" && this.state.lastName.match(/^[a-zA-Z]+$/)) ? "Enter your last name." : ""}
+                            error={this.state.lastName !== "" && !this.state.lastName.match(/^[a-zA-Z]+$/)}
+                            helperText={(this.state.lastName !== "" && !this.state.lastName.match(/^[a-zA-Z]+$/)) ? "Enter your last name." : ""}
                         />
                     </Box>
                     <Box mb={4}>
