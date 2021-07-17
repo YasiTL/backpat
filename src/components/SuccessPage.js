@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Grid, Box, Typography } from "@material-ui/core";
 
 function SuccessPage() {
-    return(
+    return (
         <Grid>
             <Box display="flex" justifyContent="center">
                 <Typography variant="h2" align="center">Success!</Typography>
