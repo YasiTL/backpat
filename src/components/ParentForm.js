@@ -29,7 +29,7 @@ class ParentForm extends React.Component {
         var docRef = db.collection("parents");
         await docRef.doc(newParent.email).set(newParent);
 
-        window.location.href = ('/SuccessPage.js');
+        window.location.href = ('/success.js');
     }
 
     handleSubmit = (event) => {
