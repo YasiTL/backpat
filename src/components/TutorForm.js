@@ -31,7 +31,7 @@ class TutorForm extends React.Component {
 
         //window.history.push('/successpage')
         //return res.redirect('/successPage');
-        window.location.href = ('/success.js');
+        window.location.href = ('/success');
     }
 
     handleSubmit = (event) => {
