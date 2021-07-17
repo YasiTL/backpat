@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Grid, Box, Typography } from "@material-ui/core";
+import { Grid, Box, Typography } from "@material-ui/core";
 
 function SuccessPage() {
     return (
@@ -10,7 +10,7 @@ function SuccessPage() {
             <Box display="flex" justifyContent="center">
                 <Typography variant="div" align="center">
                     We'll send you an email soon.&nbsp;
-                    <Link variant="text" color="secondary" component={Link} to="/success">Return to home page.</Link>
+                    <a href="/" target="_self">Return to home page</a>
                 </Typography>
             </Box>
         </Grid>
