@@ -8,6 +8,7 @@ import { Box, Grid, Typography } from "@material-ui/core";
 import ParentSignUp from "./ParentSignUp";
 import TutorSignUp from "./TutorSignUp";
 import FaqPage from "./FaqPage";
+import Footer from "./Footer";
 
 function Home() {
   return (
@@ -18,6 +19,12 @@ function Home() {
           <Route path="/parentsignup" component={ParentSignUp} />
           <Route path="/tutorsignup" component={TutorSignUp} />
           <Route path="/faq" component={FaqPage} />
+        </Switch>
+        <Footer />
+        <Switch>
+          <Route path='https://www.linkedin.com/company/backpat-tutoring/' component={() => window.location = 'https://www.linkedin.com/company/backpat-tutoring/'}></Route>
+          <Route path='https://www.facebook.com/backpattutoring/' component={() => window.location = 'https://www.facebook.com/backpattutoring/'}></Route>
+          <Route path='https://www.instagram.com/backpattutoring/' component={() => window.location = 'https://www.instagram.com/backpattutoring/'}></Route>
         </Switch>
       </div>
     </Router>
@@ -113,6 +120,8 @@ function MainBody() {
         </Grid>
         <Grid item xs></Grid>
       </Grid>
+      <br />
+      <br />
     </div>
   );
 }

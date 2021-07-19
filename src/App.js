@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import Home from "./components/Home.js";
 import ParentSignUp from "./components/ParentSignUp.js";
 import TutorSignUp from "./components/TutorSignUp.js";
+import SuccessPage from "./components/SuccessPage.js";
 import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import Sidenav from "./components/Dashboard/Sidenav";
@@ -52,7 +53,9 @@ function App() {
             <Route path="/admindashboard">
               <AdminDashboard />
             </Route>
-
+            <Route path="/success">
+              <SuccessPage />
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
