@@ -38,7 +38,7 @@ function App() {
           {window.location.pathname === '/' ||
             window.location.pathname === '/parentsignup' ||
             window.location.pathname === '/tutorsignup' ||
-            window.location.pathname === 'faq'
+            window.location.pathname === '/faq'
             ? <NavBar /> : <></>}
           <Switch>
             <Route path="/parentsignup">
