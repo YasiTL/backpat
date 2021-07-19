@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Grid from "@material-ui/core/Grid"
+import Grid from "@material-ui/core/Grid";
 import "./FaqPage.css";
 import FAQ from "./FAQ.js";
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 
 function FaqPage() {
   const [faqs, setFaqs] = useState([
@@ -61,16 +61,24 @@ function FaqPage() {
       <Grid container>
         <Grid item xs></Grid>
         <Grid item xs={9}>
+          <div className="container" style={{ height: '50px' }}></div>
           <Box display="flex" justifyContent="center">
-            <Typography variant="h4" color="primary" fontWeight="bold">-</Typography>
-            <Typography variant="h4" color="secondary">FAQ</Typography>
-            <Typography variant="h4" color="primary">-</Typography>
+            <Typography variant="h4" color="primary" fontWeight="bold">
+              -
+            </Typography>
+            <Typography variant="h4" color="secondary">
+              FAQ
+            </Typography>
+            <Typography variant="h4" color="primary">
+              -
+            </Typography>
           </Box>
           <div className="faqs">
             {faqs.map((faq, i) => (
               <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
             ))}
           </div>
+          <div className="container" style={{ height: '50px' }}></div>
         </Grid>
         <Grid item xs></Grid>
       </Grid>
