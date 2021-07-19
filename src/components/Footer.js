@@ -8,20 +8,21 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 function Footer() {
     return (
         <div>
-            <footer style={{ maxWidth: "ls", paddingTop: "2%" }} mt={2}> {/* Footer*/}
+            <footer style={{ maxWidth: "ls", paddingTop: "2%" }}> {/* Footer*/}
                 <center>
                     <Box bgcolor="#EF6C00">
                         <Container>
-                            <Grid item xs={12} sm={4} container direction="row" style={{ paddingTop: "2%", paddingLeft: "13.5%" }}>
-                                <br />
-                                <a href="https://www.linkedin.com/company/backpat-tutoring/"><Box color="black"><LinkedInIcon></LinkedInIcon></Box></a>
-                                <a href="https://www.facebook.com/backpattutoring/"><Box color="black"><FacebookIcon></FacebookIcon></Box></a>
-                                <a href="https://www.instagram.com/backpattutoring/"><Box color="black"><InstagramIcon></InstagramIcon></Box></a>
+                            <Grid container xs={12} sm={4} mt={3} justify="center">
+                                <Box mt={2} display="flex">
+                                    <a href="https://www.linkedin.com/company/backpat-tutoring/"><Box color="black"><LinkedInIcon></LinkedInIcon></Box></a>
+                                    <a href="https://www.facebook.com/backpattutoring/"><Box color="black"><FacebookIcon></FacebookIcon></Box></a>
+                                    <a href="https://www.instagram.com/backpattutoring/"><Box color="black"><InstagramIcon></InstagramIcon></Box></a>
+                                </Box>
                             </Grid>
                             <Grid>
                                 <Box>
-                                    <Typography>Designed and devloped by Backpat.</Typography>
-                                    <Typography>All rights reserved. &copy;</Typography>
+                                    <Typography>Designed and developed by Backpat.</Typography>
+                                    <Typography>All rights reserved. &copy; 2021 </Typography>
                                 </Box>
                                 <Box><br /></Box>
                             </Grid>
