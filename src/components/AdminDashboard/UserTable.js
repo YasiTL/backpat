@@ -140,7 +140,7 @@ class UserTable extends React.Component {
         let r = "Error"
         console.log(r)
 
-        window.history.push('/login')
+        window.location.href = ('/AdminDashboard.js');
 
       }
     });

@@ -5,11 +5,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
-
+import NavBar from './components/NavBar';
 import Home from "./components/Home.js";
 import ParentSignUp from "./components/ParentSignUp.js";
 import TutorSignUp from "./components/TutorSignUp.js";
 import StudentSignUp from "./components/StudentSignUp.js";
+import SuccessPage from "./components/SuccessPage.js";
 import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import Sidenav from "./components/Dashboard/Sidenav";
@@ -35,6 +36,11 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Router>
+          {window.location.pathname === '/' ||
+            window.location.pathname === '/parentsignup' ||
+            window.location.pathname === '/tutorsignup' ||
+            window.location.pathname === 'faq'
+            ? <NavBar /> : <></>}
           <Switch>
             <Route path="/parentsignup">
               <ParentSignUp />
@@ -50,6 +56,9 @@ function App() {
             </Route>
             <Route path="/admindashboard">
               <AdminDashboard />
+            </Route>
+            <Route path="/success">
+              <SuccessPage />
             </Route>
             <Route path="/login">
               <Login />

@@ -23,12 +23,12 @@ ui.start('#firebaseui-auth-container', {
 
 function Login() {
   return (
-      <div>
-        <ScopedCssBaseline>
+    <div>
+      <ScopedCssBaseline>
         <div id="firebaseui-auth-container"></div>
-        </ScopedCssBaseline>
-          Admin Login
-      </div>
+      </ScopedCssBaseline>
+      Admin Login
+    </div>
   );
 }
 
