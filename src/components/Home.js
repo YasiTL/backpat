@@ -7,10 +7,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Box, Grid, Typography } from "@material-ui/core";
 import ParentSignUp from "./ParentSignUp";
 import TutorSignUp from "./TutorSignUp";
-import Login from "./Login";
 import FaqPage from "./FaqPage";
 
-//TODO: Add spacing between body and nav bar; add background to nav bar to make it more distinguishable; Possibly include social media links;
 function Home() {
   return (
     <Router>
@@ -20,7 +18,6 @@ function Home() {
           <Route path="/parentsignup" component={ParentSignUp} />
           <Route path="/tutorsignup" component={TutorSignUp} />
           <Route path="/faq" component={FaqPage} />
-          <Route path="/login" component={Login} />
         </Switch>
       </div>
     </Router>

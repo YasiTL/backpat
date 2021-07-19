@@ -11,7 +11,6 @@ import ParentSignUp from "./components/ParentSignUp.js";
 import TutorSignUp from "./components/TutorSignUp.js";
 import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
-import AdminLogin from "./components/AdminLogin";
 import Sidenav from "./components/Dashboard/Sidenav";
 import FaqPage from "./components/FaqPage";
 
@@ -44,9 +43,6 @@ function App() {
             <Route path="/parentsignup">
               <ParentSignUp />
             </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
             <Route path="/tutorsignup">
               <TutorSignUp />
             </Route>
@@ -57,8 +53,8 @@ function App() {
               <AdminDashboard />
             </Route>
 
-            <Route path="/adminlogin">
-              <AdminLogin />
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/" exact>
               <Home />

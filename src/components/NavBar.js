@@ -70,18 +70,6 @@ function NavBar() {
               Tutor Sign Up
             </Button>
           </Grid>
-          <Grid item xs={2}>
-            <Button
-              variant="text"
-              color="secondary"
-              size="large"
-              component={Link}
-              to="/login"
-              style={{ opacity: "90%", letterSpacing: "0.05em" }}
-            >
-              Login
-            </Button>
-          </Grid>
         </Grid>
       </center>
     </div>
