@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import Home from "./components/Home.js";
 import ParentSignUp from "./components/ParentSignUp.js";
 import TutorSignUp from "./components/TutorSignUp.js";
+import StudentSignUp from "./components/StudentSignUp.js";
 import SuccessPage from "./components/SuccessPage.js";
 import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
@@ -46,6 +47,9 @@ function App() {
             </Route>
             <Route path="/tutorsignup">
               <TutorSignUp />
+            </Route>
+            <Route path="/studentsignup">
+              <StudentSignUp />
             </Route>
             <Route path="/dashboard" exact>
               <Sidenav />
