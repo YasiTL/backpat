@@ -1,9 +1,18 @@
 import React from 'react'
+import { Typography, Box} from '@material-ui/core';
+import ClassForm from "./ClassForm";
 
-class TutorSpecifics extends React.Component{
-    render () {
+class TutorSpecifics extends React.Component {
+    render() {
         return (
-            <h1>Placeholder Text Part 2 Electric boogaloo</h1>
+            <div>
+                <Box pb={3} pl={3} pt={2}>
+                    <Typography variant="h3" gutterbottom>Tutor Specifics</Typography>
+                </Box>
+                <Box mt={2} ml={3} mr={3}>
+              <ClassForm />
+            </Box>
+            </div>
         )
     }
 }
