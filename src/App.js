@@ -12,7 +12,6 @@ import TutorSignUp from "./components/TutorSignUp.js";
 import SuccessPage from "./components/SuccessPage.js";
 import Login from "./components/Login.js";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
-import Sidenav from "./components/Dashboard/Sidenav";
 import FaqPage from "./components/FaqPage";
 
 // Global Theme Changes
@@ -46,9 +45,6 @@ function App() {
             </Route>
             <Route path="/tutorsignup">
               <TutorSignUp />
-            </Route>
-            <Route path="/dashboard" exact>
-              <Sidenav />
             </Route>
             <Route path="/admindashboard">
               <AdminDashboard />
